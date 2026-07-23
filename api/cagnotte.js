@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const COTIZUP_URL = "https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee";
   const FETCH_URL = "https://r.jina.ai/" + COTIZUP_URL;
 
-  res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=600");
+  res.setHeader("Cache-Control", "s-maxage=60, stale-while-revalidate=120");
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   try {
