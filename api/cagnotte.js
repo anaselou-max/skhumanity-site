@@ -4,19 +4,18 @@
 
 export default async function handler(req, res) {
   const COTIZUP_URL = "https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee";
+  // Proxy de lecture (contourne le blocage anti-bot direct de Cotizup)
+  const FETCH_URL = "https://r.jina.ai/" + COTIZUP_URL;
 
   // Cache 5 minutes côté Vercel (évite de spammer Cotizup)
   res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=600");
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   try {
-    const response = await fetch(COTIZUP_URL, {
+    const response = await fetch(FETCH_URL, {
       headers: {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
-        "Referer": "https://www.google.com/",
-        "Cache-Control": "no-cache",
       },
     });
 
