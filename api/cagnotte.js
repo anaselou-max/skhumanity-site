@@ -5,7 +5,7 @@
 export default async function handler(req, res) {
   const COTIZUP_URL = "https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee";
   // Proxy de lecture (contourne le blocage anti-bot direct de Cotizup)
-  const FETCH_URL = "https://r.jina.ai/" + COTIZUP_URL;
+  const FETCH_URL = "https://api.allorigins.win/raw?url=" + encodeURIComponent(COTIZUP_URL);
 
   // Cache 5 minutes côté Vercel (évite de spammer Cotizup)
   res.setHeader("Cache-Control", "s-maxage=300, stale-while-revalidate=600");
