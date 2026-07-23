@@ -873,7 +873,7 @@
     });
 
     applyTemplatedI18n(lang);
-
+if (window.__skhReapply) window.__skhReapply();
     const frOpt = document.querySelector('.lang-fr-opt');
     const enOpt = document.querySelector('.lang-en-opt');
     if (frOpt && enOpt) {
