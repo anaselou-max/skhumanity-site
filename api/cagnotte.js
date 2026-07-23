@@ -25,8 +25,7 @@ export default async function handler(req, res) {
     html = html.replace(/[*_#>`]/g, "");
 
     // Trouve tous les montants en euros, peu importe le format (espace ou virgule)
-    const euroMatches = [...html.matchAll(/€\s*[\d][\d.,\u00A0\s]{0,9}|[\d][\d.,\u00A0\s]{0,9}\s*€/g)];
-    const amounts = euroMatches
+    const euroMatches = [...html.matchAll(/€ ?[\d][\d.,\u00A0 ]{0,7}|[\d][\d.,\u00A0 ]{0,7} ?€/g)];
       .map((m) => parseInt(m[0].replace(/[^\d]/g, ""), 10))
       .filter((n) => Number.isFinite(n) && n > 0);
 
