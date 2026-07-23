@@ -23,7 +23,8 @@ export default async function handler(req, res) {
       throw new Error(`Cotizup a répondu ${response.status}`);
     }
 
-    const html = await response.text();
+    let html = await response.text();
+html = html.replace(/[*_#>`]/g, "");
 
     // Cherche le motif "X XXX € sur 25 250 €"
     const match = html.match(/([\d\s\u00A0]+)\s*€\s*sur\s*([\d\s\u00A0]+)\s*€/i);
