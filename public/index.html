@@ -921,7 +921,7 @@
     setText('js-remaining-title', fmt(remaining));
     setText('js-count-5-text', count5.toLocaleString('fr-FR'));
     setText('js-count-5-tier', count5.toLocaleString('fr-FR'));
-    if (donors) setText('js-donors', donors.toLocaleString('fr-FR'));
+    if (donors) setText('js-donors-label', donors.toLocaleString('fr-FR') + ' donateurs déjà mobilisés');
 
     const fillEl = document.getElementById('js-bar-fill');
     if (fillEl) fillEl.style.width = percent + '%';
