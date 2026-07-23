@@ -929,18 +929,29 @@
   }
 
   (async function () {
-    const calcEl = document.getElementById('donation-calc');
-    if (!calcEl) return;
+          const calcEl = document.getElementById('donation-calc');
+          if (!calcEl) return;
 
-    const fallbackGoal = parseInt(calcEl.dataset.goal, 10);
-    const fallbackRaised = parseInt(calcEl.dataset.raised, 10);
+          const fallbackGoal = parseInt(calcEl.dataset.goal, 10);
+          const fallbackRaised = parseInt(calcEl.dataset.raised, 10);
 
-    const goal = fallbackGoal;
-    const raised = fallbackRaised;
-    const stats = await renderDonationStats(goal, raised, null);
-    window.__skhCount5 = stats.count5.toLocaleString('fr-FR');
-    window.__skhRemaining = stats.remaining.toLocaleString('fr-FR') + ' €';
-    applyTemplatedI18n(currentLang);
+          let goal = fallbackGoal;
+          let raised = fallbackRaised;
+          let donors = null;
+
+          try {
+            const res = await fetch('/api/cagnotte');
+            const data = await res.json();
+            if (!data.error) {
+              goal = data.objectif;
+              raised = data.collecte;
+              donors = data.donateurs;
+            }
+          } catch (e) {
+            console.warn('Cagnotte live indisponible, valeurs statiques utilisées.', e);
+          }
+
+          const stats = await renderDonationStats(goal, raised, donors);
 
     // ===== PARTAGE =====
     const pageUrl = window.location.href;
