@@ -24,8 +24,8 @@ export default async function handler(req, res) {
     let html = await response.text();
     html = html.replace(/[*_#>`]/g, "");
 
-    // Trouve tous les montants en euros, peu importe le format (espace ou virgule)
-    const amounts = [...html.matchAll(/€ ?[\d][\d.,\u00A0 ]{0,7}|[\d][\d.,\u00A0 ]{0,7} ?€/g)];
+    const euroMatches = [...html.matchAll(/€ ?[\d][\d.,\u00A0 ]{0,7}|[\d][\d.,\u00A0 ]{0,7} ?€/g)];
+    const amounts = euroMatches
       .map((m) => parseInt(m[0].replace(/[^\d]/g, ""), 10))
       .filter((n) => Number.isFinite(n) && n > 0);
 
@@ -36,7 +36,6 @@ export default async function handler(req, res) {
     const collecte = amounts[0];
     const objectif = amounts[1];
 
-    // Nombre de donateurs : premier nombre isolé après un pourcentage
     const donorsMatch = html.match(/%[\s\S]{0,10}?(\d+)/);
     const donateurs = donorsMatch ? parseInt(donorsMatch[1], 10) : null;
 
