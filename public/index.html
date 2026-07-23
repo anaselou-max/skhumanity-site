@@ -951,7 +951,7 @@ if (window.__skhReapply) window.__skhReapply();
           } catch (e) {
             console.warn('Cagnotte live indisponible, valeurs statiques utilisées.', e);
           }
-
+window.__skhReapply = () => renderDonationStats(goal, raised, donors);
           const stats = await renderDonationStats(goal, raised, donors);
 
     // ===== PARTAGE =====
