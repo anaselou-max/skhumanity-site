@@ -103,7 +103,7 @@
   .lang-btn{
     display:inline-flex; align-items:center; gap:4px; min-height:44px; padding:0 14px;
     background:#fff; border:1px solid var(--brume); border-radius:999px; cursor:pointer;
-    font:600 .8rem/1 var(--sans); color:#7A8780;
+    font:600 .8rem/1 var(--sans); color:var(--encre-doux); /* contraste ≥ 4,5:1 (WCAG AA) */
   }
   .lang-opt.is-active{color:var(--foret);}
   .menu-btn{
@@ -364,7 +364,7 @@
   .verse{padding:80px 0; text-align:center; border-top:1px solid var(--brume); border-bottom:1px solid var(--brume);}
   .verse .arabic{font-size:clamp(1.45rem, 4.6vw, 2.1rem); line-height:2; color:var(--foret); max-width:820px; margin:0 auto 22px;}
   .verse .trans{font:400 clamp(1.05rem, 2.6vw, 1.25rem)/1.6 var(--serif); color:var(--encre); max-width:36em; margin:0 auto 14px;}
-  .verse .ref{margin:0; font-size:.88rem; font-weight:600; color:var(--or);}
+  .verse .ref{margin:0; font-size:.88rem; font-weight:600; color:#8A6420;} /* doré assombri : contraste ≥ 4,5:1 (WCAG AA) */
   @media (min-width:960px){ .verse{padding:120px 0;} }
 
   /* Engagements */
