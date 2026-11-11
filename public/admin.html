@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Mise à jour de la cagnotte · SK Humanity</title>
+<style>
+  :root{
+    --foret:#0F3B2E; --vert:#2C7A5B; --vert-fonce:#22634A; --calcaire:#F5F6F1;
+    --encre:#14241D; --encre-doux:#4A5A52; --brume:#DDE5DE; --erreur:#A3321F; --ok:#1F6B47;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--calcaire); color:var(--encre); font:400 1rem/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;}
+  main{max-width:440px; margin:0 auto; padding:32px 16px 48px;}
+  h1{margin:0 0 6px; font:600 1.45rem/1.2 Georgia, serif; color:var(--foret);}
+  .intro{margin:0 0 24px; color:var(--encre-doux); font-size:.95rem;}
+  .intro a{color:var(--vert); font-weight:600;}
+  .current{background:#fff; border:1px solid var(--brume); border-radius:16px; padding:16px 18px; margin-bottom:24px;}
+  .current p{margin:0;}
+  .current .big{font:600 1.5rem/1.2 Georgia, serif; color:var(--foret);}
+  .current .meta{font-size:.85rem; color:var(--encre-doux); margin-top:4px;}
+  form{display:grid; gap:16px;}
+  label{display:grid; gap:6px; font-weight:600; font-size:.92rem;}
+  label small{font-weight:400; color:var(--encre-doux);}
+  input[type=text], input[type=password]{
+    width:100%; min-height:50px; padding:0 14px; border:1.5px solid var(--brume); border-radius:12px;
+    background:#fff; font-family:inherit; font-size:1.1rem; font-weight:500; color:var(--encre);
+  }
+  input:focus-visible, button:focus-visible{outline:3px solid #B98A3E; outline-offset:2px;}
+  .check{display:flex; gap:10px; align-items:flex-start; font-weight:400;}
+  .check input{width:20px; height:20px; margin-top:2px;}
+  .check[hidden]{display:none;}
+  button{
+    min-height:52px; border:0; border-radius:999px; background:var(--vert); color:#fff;
+    font-family:inherit; font-size:1rem; font-weight:600; cursor:pointer;
+  }
+  button:hover{background:var(--vert-fonce);}
+  button:disabled{opacity:.6; cursor:wait;}
+  .msg{margin:0; padding:12px 14px; border-radius:12px; font-size:.92rem;}
+  .msg[hidden]{display:none;}
+  .msg.ok{background:#E3F1E8; color:var(--ok);}
+  .msg.err{background:#F8E6E2; color:var(--erreur);}
+</style>
+</head>
+<body>
+<main>
+  <h1>Mise à jour de la cagnotte</h1>
+  <p class="intro">Ouvrez la <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener">page CotizUp officielle</a>, relevez le montant collecté et le nombre de donateurs, puis enregistrez-les ici. Le site se met à jour en 5 minutes maximum.</p>
+
+  <section class="current" aria-live="polite">
+    <p class="big" id="cur-amount">Chargement…</p>
+    <p class="meta" id="cur-meta"></p>
+  </section>
+
+  <form id="form" novalidate>
+    <label>Montant collecté (€)
+      <small>Nombre entier, sans espace ni symbole. Exemple : 9494</small>
+      <input type="text" id="collecte" inputmode="numeric" autocomplete="off" required>
+    </label>
+    <label>Nombre de donateurs
+      <small>Le chiffre affiché à côté de « Donateurs » sur CotizUp</small>
+      <input type="text" id="donateurs" inputmode="numeric" autocomplete="off" required>
+    </label>
+    <label>Code d’accès
+      <input type="password" id="token" autocomplete="current-password" required>
+    </label>
+    <label class="check" id="drop-wrap" hidden>
+      <input type="checkbox" id="drop">
+      <span>Confirmer la baisse : j’ai vérifié ces chiffres sur la page CotizUp.</span>
+    </label>
+    <button type="submit" id="submit">Enregistrer le relevé</button>
+    <p class="msg" id="msg" role="status" hidden></p>
+  </form>
+</main>
+
+<script>
+(function () {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+  const fmtEur = (n) => n.toLocaleString('fr-FR') + ' €';
+  const fmtDate = (iso) => new Date(iso).toLocaleString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+  function showMsg(text, ok) {
+    const m = $('msg');
+    m.textContent = text;
+    m.className = 'msg ' + (ok ? 'ok' : 'err');
+    m.hidden = false;
+  }
+
+  function showCurrent(s) {
+    if (!s) {
+      $('cur-amount').textContent = 'Aucun relevé enregistré';
+      $('cur-meta').textContent = 'Le site affiche le dernier relevé intégré à la page.';
+      return;
+    }
+    $('cur-amount').textContent = fmtEur(s.collecte) + ' collectés';
+    $('cur-meta').textContent = s.donateurs.toLocaleString('fr-FR') + ' donateurs, relevé le ' + fmtDate(s.verifieLe);
+  }
+
+  async function loadCurrent() {
+    try {
+      const res = await fetch('/api/stats?t=' + Date.now());
+      if (res.status === 404) return showCurrent(null);
+      if (!res.ok) throw new Error();
+      showCurrent(await res.json());
+    } catch (e) {
+      $('cur-amount').textContent = 'Relevé actuel indisponible';
+      $('cur-meta').textContent = 'Le stockage ne répond pas. Vous pouvez quand même essayer d’enregistrer.';
+    }
+  }
+
+  // Le code reste mémorisé uniquement dans cet onglet (effacé à sa fermeture)
+  try { $('token').value = sessionStorage.getItem('skh-admin') || ''; } catch (e) {}
+
+  $('form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    $('msg').hidden = true;
+    const collecte = $('collecte').value.replace(/[\s  €.]/g, '');
+    const donateurs = $('donateurs').value.replace(/[\s  ]/g, '');
+    const token = $('token').value.trim();
+    if (!/^\d+$/.test(collecte)) return showMsg('Entrez le montant en euros, en chiffres uniquement. Exemple : 9494', false);
+    if (!/^\d+$/.test(donateurs)) return showMsg('Entrez le nombre de donateurs, en chiffres uniquement.', false);
+    if (!token) return showMsg('Entrez le code d’accès.', false);
+
+    $('submit').disabled = true;
+    try {
+      const res = await fetch('/api/stats-admin', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Authorization: 'Bearer ' + token },
+        body: JSON.stringify({ collecte: Number(collecte), donateurs: Number(donateurs), confirmerBaisse: $('drop').checked }),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (res.ok) {
+        try { sessionStorage.setItem('skh-admin', token); } catch (err) {}
+        showCurrent(data);
+        $('drop-wrap').hidden = true;
+        $('drop').checked = false;
+        $('form').reset();
+        try { $('token').value = token; } catch (err) {}
+        showMsg('Relevé enregistré : ' + fmtEur(data.collecte) + ', ' + data.donateurs.toLocaleString('fr-FR') + ' donateurs. Visible sur le site d’ici 5 minutes.', true);
+      } else {
+        if (res.status === 409) $('drop-wrap').hidden = false;
+        showMsg(data.error || 'Le relevé n’a pas été enregistré (erreur ' + res.status + ').', false);
+      }
+    } catch (err) {
+      showMsg('Connexion impossible. Vérifiez votre réseau, puis réessayez.', false);
+    } finally {
+      $('submit').disabled = false;
+    }
+  });
+
+  loadCurrent();
+})();
+</script>
+</body>
+</html>
