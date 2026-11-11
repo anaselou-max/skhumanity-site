@@ -29,11 +29,13 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Méthode non autorisée.' });
   }
 
+  // Messages de configuration précis, sans jamais révéler de valeur
   const adminToken = process.env.ADMIN_TOKEN || '';
-  if (adminToken.length < 16 || !storeConfigured()) {
-    return res.status(503).json({
-      error: 'Administration non configurée : ADMIN_TOKEN (16 caractères minimum) et stockage Upstash Redis requis.',
-    });
+  if (!storeConfigured()) {
+    return res.status(503).json({ error: 'Stockage non configuré : connectez Upstash Redis au projet sur Vercel, puis redéployez.' });
+  }
+  if (adminToken.length < 16) {
+    return res.status(503).json({ error: 'Code d’accès non configuré : ajoutez ADMIN_TOKEN (16 caractères minimum) dans les variables d’environnement Vercel, puis redéployez.' });
   }
 
   const ip = String(req.headers['x-forwarded-for'] || '').split(',')[0].trim() || 'inconnue';
