@@ -157,23 +157,35 @@
 
   /* ============ LOGO OFFICIEL ============
      Tracés et textes repris du PDF officiel, sans modification.
-     Vert de la charte sur fond clair, crème sur fond sombre ; briques et HUMANITY en or. */
-  .logo{display:block; color:var(--brand); --brick:var(--gold); --tag:var(--gold);}
+     Vert de la charte sur fond clair, crème sur fond sombre ; briques en or #AE8B53,
+     HUMANITY et filets en « or texte » #C9A24A (charte officielle, page 4). */
+  .logo{display:block; color:var(--brand); --brick:var(--gold); --tag:#C9A24A;}
   .on-night .logo, footer .logo{color:var(--on-night);}
   .logo-mark{aspect-ratio:204 / 267; height:100%;}
   .logo-type{aspect-ratio:391.7 / 64;}
   .logo-full{aspect-ratio:403.68 / 374;}
 
-  /* ============ NAVIGATION ============ */
-  .nav{position:sticky; top:0; z-index:50; background:rgba(245,246,241,.96); border-bottom:1px solid var(--line);}
+  /* ============ EN-TÊTE ============
+     Haut de page : logo complet officiel (120 px mobile, 132 px ordinateur ; marges ≥ une largeur de brique).
+     Au défilement : barre fixe compacte avec le symbole seul. */
+  .masthead{background:var(--paper); border-bottom:1px solid var(--line);}
+  .masthead-inner{display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:16px; padding-bottom:16px;}
+  .brand-full{display:block; flex-shrink:0; padding:2px 0; text-decoration:none;}
+  .brand-full .logo-full{width:120px; height:auto;}
+  .nav-right{display:flex; align-items:center; gap:8px;}
+  @media (min-width:960px){ .masthead-inner{padding-top:20px; padding-bottom:20px;} .brand-full .logo-full{width:132px;} }
+
+  .nav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    background:var(--paper); border-bottom:1px solid var(--line);
+    transform:translateY(-100%); visibility:hidden;
+    transition:transform .3s var(--ease), visibility 0s linear .3s;
+  }
+  .nav.is-shown{transform:none; visibility:visible; transition:transform .3s var(--ease), visibility 0s;}
   .nav-inner{display:flex; align-items:center; gap:8px; height:var(--nav-h);}
-  /* En-tête : symbole et nom côte à côte (le logo empilé serait illisible à cette hauteur) */
-  .brand{display:flex; align-items:center; gap:10px; margin-right:auto; min-height:44px; min-width:0; text-decoration:none;}
-  .brand .logo-mark{height:32px; width:auto; flex-shrink:0;}
-  .brand .logo-type{height:26px; width:auto; flex-shrink:1; min-width:0;}
-  @media (max-width:359px){ .brand .logo-type{height:22px;} .brand .logo-mark{height:28px;} }
-  @media (min-width:720px){ .brand{gap:12px;} .brand .logo-mark{height:38px;} .brand .logo-type{height:31px;} }
-  @media (min-width:960px){ .brand .logo-mark{height:42px;} .brand .logo-type{height:34px;} }
+  .brand{display:flex; align-items:center; margin-right:auto; min-height:44px; text-decoration:none;}
+  .brand .logo-mark{height:36px; width:auto;}
+  @media (min-width:960px){ .brand .logo-mark{height:40px;} }
   .nav-links{display:none;}
   .nav-links a{position:relative; padding:8px 0; text-decoration:none; font-size:.9375rem; font-weight:500; color:var(--ink-2); transition:color .16s var(--ease);}
   .nav-links a:hover{color:var(--ink);}
@@ -186,13 +198,15 @@
   .lang button[aria-pressed="true"]{background:var(--card); color:var(--ink); box-shadow:0 1px 2px rgba(0,0,0,.06);}
   .nav-cta{display:none;}
   .menu-btn{width:44px; height:44px; display:grid; place-items:center; margin-right:-8px; background:none; border:0; border-radius:8px; color:var(--ink); cursor:pointer;}
-  .menu-btn .ic-close{display:none;}
-  .menu-btn[aria-expanded="true"] .ic-open{display:none;}
-  .menu-btn[aria-expanded="true"] .ic-close{display:block;}
-  .menu-sheet{padding-top:8px; padding-bottom:24px; border-top:1px solid var(--line); max-height:calc(100vh - var(--nav-h)); overflow-y:auto;}
+  .menu-sheet{position:fixed; inset:0; z-index:70; overflow-y:auto; background:var(--paper); padding-bottom:calc(24px + env(safe-area-inset-bottom));}
   .menu-sheet[hidden]{display:none;}
+  .menu-sheet:focus{outline:none;}
+  .sheet-head{display:flex; align-items:center; justify-content:space-between; height:var(--nav-h); border-bottom:1px solid var(--line);}
+  .sheet-head .logo-mark{height:36px; width:auto;}
+  .menu-close{width:44px; height:44px; display:grid; place-items:center; margin-right:-8px; background:none; border:0; border-radius:8px; color:var(--ink); cursor:pointer;}
+  .sheet-links{padding-top:8px;}
   .menu-sheet a:not(.btn){display:flex; align-items:center; min-height:56px; border-bottom:1px solid var(--line); text-decoration:none; font:400 1.375rem/1.2 var(--serif); color:var(--ink);}
-  .menu-sheet .btn{width:100%; margin:16px 0; border-bottom:0;}
+  .menu-sheet .btn{width:100%; margin:16px 0;}
   /* Ordinateur : Le projet · Transparence · [Faire un don] · Contact | FR/EN */
   @media (min-width:960px){
     .nav-links{display:flex; align-items:center; gap:28px;}
@@ -257,7 +271,7 @@
     .registry{order:3;}
   }
   @media (min-width:960px){
-    .hero{padding:72px 0 112px;}
+    .hero{padding:48px 0 112px;}
     .hero-grid{grid-template-columns:minmax(0, 1.1fr) minmax(0, .9fr); gap:72px; align-items:center;}
     .arch{margin:0 0 0 auto; padding-bottom:88px;}
     .plaque{left:auto; right:-24px; transform:none; width:360px;}
@@ -578,14 +592,38 @@
 
 <a href="#main" class="skip" data-fr="Aller au contenu" data-en="Skip to content">Aller au contenu</a>
 
-<!-- ============ NAVIGATION ============ -->
-<header class="nav">
+<!-- ============ EN-TÊTE : LOGO COMPLET OFFICIEL ============
+     Charte : le logo complet en priorité, 120 px de large minimum, zone de protection = largeur d'une brique. -->
+<header class="masthead" id="masthead">
+  <div class="wrap masthead-inner">
+    <a class="brand-full" href="#main" aria-label="Suleyman &amp; Kabir Humanity">
+      <svg class="logo logo-full" viewBox="95.8 275.945 403.68 374" aria-hidden="true"><use href="#logo-full" x="95.8" y="275.945" width="403.68" height="374"/></svg>
+    </a>
+    <div class="nav-right">
+      <nav class="nav-links" aria-label="Navigation principale" data-aria-fr="Navigation principale" data-aria-en="Main navigation">
+        <a href="#projet" data-fr="Le projet" data-en="The project">Le projet</a>
+        <a href="#transparence" data-fr="Transparence" data-en="Transparency">Transparence</a>
+        <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn nav-cta" data-fr="Faire un don" data-en="Donate">Faire un don</a>
+        <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+      </nav>
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang="fr" lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-sheet" aria-label="Ouvrir le menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ BARRE FIXE COMPACTE (symbole seul, petit format) : apparaît une fois l'en-tête dépassé ============ -->
+<div class="nav" id="bar" inert>
   <div class="wrap nav-inner">
     <a class="brand" href="#main" aria-label="Suleyman &amp; Kabir Humanity">
       <svg class="logo logo-mark" viewBox="195.6378 283.945 204 267" aria-hidden="true"><use href="#logo-mark" x="195.6378" y="283.945" width="204" height="267"/></svg>
-      <svg class="logo logo-type" viewBox="101.8 582 391.7 64" aria-hidden="true"><use href="#logo-type" x="101.8" y="582" width="391.7" height="64"/></svg>
     </a>
-    <nav class="nav-links" aria-label="Navigation principale" data-aria-fr="Navigation principale" data-aria-en="Main navigation">
+    <nav class="nav-links" aria-label="Navigation (barre fixe)" data-aria-fr="Navigation (barre fixe)" data-aria-en="Navigation (sticky bar)">
       <a href="#projet" data-fr="Le projet" data-en="The project">Le projet</a>
       <a href="#transparence" data-fr="Transparence" data-en="Transparency">Transparence</a>
       <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn nav-cta" data-fr="Faire un don" data-en="Donate">Faire un don</a>
@@ -595,18 +633,27 @@
       <button type="button" data-lang="fr" lang="fr" aria-pressed="true" aria-label="Français">FR</button>
       <button type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
     </div>
-    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-sheet" aria-label="Ouvrir le menu">
-      <svg class="ic-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
-      <svg class="ic-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-sheet" aria-label="Ouvrir le menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
     </button>
   </div>
-  <nav class="wrap menu-sheet" id="menu-sheet" aria-label="Menu mobile" data-aria-fr="Menu mobile" data-aria-en="Mobile menu" hidden>
+</div>
+
+<!-- ============ MENU MOBILE PLEIN ÉCRAN ============ -->
+<div class="menu-sheet" id="menu-sheet" role="dialog" aria-modal="true" aria-label="Menu" tabindex="-1" hidden>
+  <div class="wrap sheet-head">
+    <svg class="logo logo-mark" viewBox="195.6378 283.945 204 267" aria-hidden="true"><use href="#logo-mark" x="195.6378" y="283.945" width="204" height="267"/></svg>
+    <button class="menu-close" id="menu-close" type="button" aria-label="Fermer le menu">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="wrap sheet-links" aria-label="Menu mobile" data-aria-fr="Menu mobile" data-aria-en="Mobile menu">
     <a href="#projet" data-fr="Le projet" data-en="The project">Le projet</a>
     <a href="#transparence" data-fr="Transparence" data-en="Transparency">Transparence</a>
     <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn" data-fr="Faire un don" data-en="Donate">Faire un don</a>
     <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
   </nav>
-</header>
+</div>
 
 <main id="main">
 
@@ -1221,24 +1268,40 @@
     return /^fr\b/i.test(nav) ? 'fr' : 'en';
   }
 
-  // ===== MENU MOBILE =====
-  const menuBtn = document.getElementById('menu-btn');
+  // ===== MENU MOBILE PLEIN ÉCRAN (ouvert depuis l'en-tête ou la barre fixe) =====
+  const menuBtns = document.querySelectorAll('.menu-btn');
+  const menuClose = document.getElementById('menu-close');
   const sheet = document.getElementById('menu-sheet');
+  let menuOpener = null;
   function updateMenuLabel() {
-    const open = menuBtn.getAttribute('aria-expanded') === 'true';
-    menuBtn.setAttribute('aria-label', open ? T[lang].menuClose : T[lang].menuOpen);
+    menuBtns.forEach((b) => b.setAttribute('aria-label', T[lang].menuOpen));
+    menuClose.setAttribute('aria-label', T[lang].menuClose);
   }
-  function setMenu(open) {
-    menuBtn.setAttribute('aria-expanded', String(open));
+  function setMenu(open, restoreFocus) {
+    menuBtns.forEach((b) => b.setAttribute('aria-expanded', String(open)));
     sheet.hidden = !open;
-    updateMenuLabel();
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    if (open) { sheet.focus({ preventScroll: true }); }
+    else if (restoreFocus && menuOpener) { menuOpener.focus({ preventScroll: true }); }
   }
-  menuBtn.addEventListener('click', () => setMenu(menuBtn.getAttribute('aria-expanded') !== 'true'));
+  menuBtns.forEach((b) => b.addEventListener('click', () => { menuOpener = b; setMenu(true); }));
+  menuClose.addEventListener('click', () => setMenu(false, true));
   sheet.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !sheet.hidden) { setMenu(false); menuBtn.focus(); }
+    if (e.key === 'Escape' && !sheet.hidden) setMenu(false, true);
   });
   window.matchMedia('(min-width: 960px)').addEventListener('change', (e) => { if (e.matches) setMenu(false); });
+
+  // ===== BARRE FIXE COMPACTE : visible dès que l'en-tête avec le logo complet est sorti de l'écran =====
+  const bar = document.getElementById('bar');
+  const masthead = document.getElementById('masthead');
+  // Calcul de position au défilement (fiable partout, y compris lors des sauts directs vers une section).
+  function updateBar() {
+    const show = masthead.getBoundingClientRect().bottom <= 0;
+    if (show === bar.classList.contains('is-shown')) return;
+    bar.classList.toggle('is-shown', show);
+    if (show) bar.removeAttribute('inert'); else bar.setAttribute('inert', '');
+  }
 
   // ===== COPIER LE LIEN =====
   const copyLabel = document.getElementById('copy-label');
@@ -1261,14 +1324,18 @@
   let dockTick = false;
   function updateDock() {
     dockTick = false;
-    const navH = document.querySelector('.nav').offsetHeight;
+    const navH = bar.offsetHeight;
     const show = heroCtas.getBoundingClientRect().bottom < navH;
     if (show === dock.classList.contains('is-shown')) return;
     dock.classList.toggle('is-shown', show);
     if (show) dock.removeAttribute('inert'); else dock.setAttribute('inert', '');
   }
-  window.addEventListener('scroll', () => { if (!dockTick) { dockTick = true; requestAnimationFrame(updateDock); } }, { passive: true });
-  window.addEventListener('resize', updateDock);
+  window.addEventListener('scroll', () => {
+    updateBar();
+    if (!dockTick) { dockTick = true; requestAnimationFrame(updateDock); }
+  }, { passive: true });
+  window.addEventListener('resize', () => { updateBar(); updateDock(); });
+  updateBar();
 
   // ===== APPARITION DOUCE DES BLOCS =====
   const revealEls = document.querySelectorAll('[data-reveal]');

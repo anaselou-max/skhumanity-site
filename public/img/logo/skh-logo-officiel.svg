@@ -7,6 +7,6 @@
 <path d="M202.6378 550.945V385.945C202.6378 333.478 245.1707 290.945 297.6378 290.945S392.6378 333.478 392.6378 385.945V550.945" fill="none" stroke="#11392E" stroke-width="14"/>
 <g fill="#AE8B53"><rect x="274.6378" y="472.945" width="46" height="20" rx="2"/><rect x="247.6378" y="500.945" width="46" height="20" rx="2"/><rect x="301.6378" y="500.945" width="46" height="20" rx="2"/></g>
 <text x="103.8065" y="612.945" font-family="'SKH Logo Serif', 'DejaVu Serif', Georgia, serif" font-weight="700" font-size="38" fill="#11392E">Suleyman &amp; Kabir</text>
-<text x="216.6839 239.723 262.3616 287.6175 309.2991 332.2601 346.1585 366.3753" y="641.945" font-family="'SKH Logo Sans', 'DejaVu Sans', Verdana, sans-serif" font-size="20" fill="#AE8B53">HUMANITY</text>
-<path d="M146.8888 634.945H211.6839M383.5921 634.945H448.3872" stroke="#AE8B53" stroke-width="1.5"/>
+<text x="216.6839 239.723 262.3616 287.6175 309.2991 332.2601 346.1585 366.3753" y="641.945" font-family="'SKH Logo Sans', 'DejaVu Sans', Verdana, sans-serif" font-size="20" fill="#C9A24A">HUMANITY</text>
+<path d="M146.8888 634.945H211.6839M383.5921 634.945H448.3872" stroke="#C9A24A" stroke-width="1.5"/>
 </svg>
