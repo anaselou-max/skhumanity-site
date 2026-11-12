@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="no-js">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Suleyman & Kabir Humanity — Sadaqa Jariya Internationale</title>
+<title>Suleyman & Kabir Humanity — Orphelinat, mosquée et puits au Bangladesh</title>
 <meta name="description" content="Suleyman & Kabir Humanity construit, avec l'ONG El Habib, un orphelinat pour 60 enfants, une mosquée et un puits d'eau potable au Bangladesh. Chaque don est tracé.">
-<meta name="theme-color" content="#0F3B2E">
+<link rel="canonical" href="https://skhumanity.com/">
+<meta name="theme-color" content="#F5F6F1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11392E" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/fonts/skh-logo-serif.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/skh-logo-sans.ttf" as="font" type="font/ttf" crossorigin>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Suleyman & Kabir Humanity">
 <meta property="og:title" content="Une aumône qui continue de grandir après vous">
@@ -16,746 +22,818 @@
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://skhumanity.com/">
 <meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preload" href="/fonts/literata-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/public-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/newsreader-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/img/mosquee-priere.jpg" as="image" fetchpriority="high">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "NGO",
+  "name": "Suleyman & Kabir Humanity",
+  "url": "https://skhumanity.com/",
+  "logo": "https://skhumanity.com/img/logo/skh-logo-officiel.png",
+  "email": "suleyman.kabir.humanity@gmail.com",
+  "address": { "@type": "PostalAddress", "addressCountry": "FR" },
+  "identifier": [
+    { "@type": "PropertyValue", "propertyID": "SIREN", "value": "106087125" },
+    { "@type": "PropertyValue", "propertyID": "RNA", "value": "W781010839" }
+  ]
+}
+</script>
+<script>document.documentElement.classList.replace('no-js', 'js');</script>
 <style>
-  /* Polices hébergées sur le site (aucun appel à Google Fonts) — licence SIL Open Font License */
-  @font-face{font-family:'Literata'; font-style:normal; font-weight:400 700; font-display:swap;
-    src:url(/fonts/literata-latin.woff2) format('woff2');
+  /* Polices hébergées sur le site (aucun appel externe) — licence SIL Open Font License */
+  @font-face{font-family:'Newsreader'; font-style:normal; font-weight:200 800; font-display:swap;
+    src:url(/fonts/newsreader-latin.woff2) format('woff2');
     unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
-  @font-face{font-family:'Public Sans'; font-style:normal; font-weight:400 700; font-display:swap;
-    src:url(/fonts/public-sans-latin.woff2) format('woff2');
+  @font-face{font-family:'Instrument Sans'; font-style:normal; font-weight:400 700; font-display:swap;
+    src:url(/fonts/instrument-sans-latin.woff2) format('woff2');
     unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}
+  /* Polices du logo officiel, extraites telles quelles du PDF (sous-ensembles DejaVu, licence libre) */
+  @font-face{font-family:'SKH Logo Serif'; font-weight:700; font-display:block; src:url(/fonts/skh-logo-serif.ttf) format('truetype');}
+  @font-face{font-family:'SKH Logo Sans'; font-weight:400; font-display:block; src:url(/fonts/skh-logo-sans.ttf) format('truetype');}
   @font-face{font-family:'Amiri'; font-style:normal; font-weight:700; font-display:swap;
     src:url(/fonts/amiri-bold-arabic.woff2) format('woff2');
     unicode-range:U+0600-06FF, U+0750-077F, U+0870-0891, U+0897-08E1, U+08E3-08FF, U+200C-200E, U+2010-2011, U+204F, U+2E41, U+FB50-FDFF, U+FE70-FE74, U+FE76-FEFC;}
 
-  /* ============ TOKENS ============ */
+  /* ============ TOKENS ============
+     Monde : le chantier — chaux, brique cuite, papier officiel, vert profond du logo.
+     Une rampe neutre chaude, un vert de marque pour l'action, l'or réservé aux briques. */
   :root{
-    --foret:#0F3B2E;
-    --vert:#2C7A5B;
-    --vert-fonce:#22634A;
-    --calcaire:#F5F6F1;
-    --blanc:#FFFFFF;
-    --or:#B98A3E;
-    --or-clair:#D8B46E;
-    --encre:#14241D;
-    --encre-doux:#4A5A52;
-    --brume:#DDE5DE;
-    --serif:'Literata', Georgia, serif;
-    --sans:'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    /* Charte officielle : vert #11392E, or #AE8B53, crème #F5F6F1 */
+    --paper:#F5F6F1;      /* fond de page, crème de la charte */
+    --paper-2:#EBEDE5;    /* surface relevée */
+    --card:#FBFBF8;       /* carte, document */
+    --ink:#16201B;        /* texte principal */
+    --ink-2:#4C5650;      /* texte secondaire */
+    --ink-3:#626C65;      /* texte discret (≥ 4,5:1 sur --paper) */
+    --line:rgba(22,32,27,.1);
+    --line-2:rgba(22,32,27,.16);
+
+    --brand:#11392E;      /* vert de la charte : action principale */
+    --brand-2:#0B2A21;
+
+    --night:#11392E;      /* sections sombres, vert de la charte */
+    --night-2:#164437;
+    --night-3:#1D4F41;
+    --on-night:#F5F6F1;
+    --on-night-2:rgba(245,246,241,.76);
+    --on-night-3:rgba(245,246,241,.62);
+    --line-night:rgba(245,246,241,.14);
+
+    --gold:#AE8B53;       /* or de la charte : briques et logo */
+    --gold-light:#C9AB78; /* teinte claire de l'or, lisible sur le vert */
+    --gold-ink:#7E6230;   /* or assombri, lisible sur fond clair */
+
+    --serif:'Newsreader', Georgia, 'Times New Roman', serif;
+    --sans:'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
     --arabe:'Amiri', 'Traditional Arabic', 'Geeza Pro', serif;
+
+    --ease:cubic-bezier(.22, 1, .36, 1);
     --gutter:20px;
-    --maxw:1200px;
+    --maxw:1240px;
     --nav-h:64px;
   }
-  @media (min-width:720px){ :root{ --gutter:40px; } }
+  @media (min-width:720px){ :root{ --gutter:32px; } }
+  @media (min-width:960px){ :root{ --nav-h:72px; } }
 
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
   body{
-    margin:0; background:var(--calcaire); color:var(--encre);
+    margin:0; background:var(--paper); color:var(--ink);
     font:400 1rem/1.6 var(--sans);
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
   }
   img{display:block; max-width:100%; height:auto;}
   a{color:inherit;}
-  h1, h2, h3{margin:0;}
-  [id]{scroll-margin-top:calc(var(--nav-h) + 12px);}
+  h1, h2, h3, p, dl, dd, figure{margin:0;}
+  [id]{scroll-margin-top:calc(var(--nav-h) + 16px);}
   .wrap{max-width:var(--maxw); margin:0 auto; padding:0 var(--gutter);}
   .skip{position:absolute; left:-9999px; top:0;}
-  .skip:focus{left:12px; top:12px; z-index:999; background:#fff; padding:10px 16px; border-radius:10px;}
-  a:focus-visible, button:focus-visible{outline:3px solid var(--or); outline-offset:3px; border-radius:8px;}
+  .skip:focus{left:12px; top:12px; z-index:999; background:var(--card); color:var(--ink); padding:12px 16px; border-radius:8px;}
+  :focus-visible{outline:2px solid var(--gold-ink); outline-offset:3px; border-radius:4px;}
+  .on-night :focus-visible, .night :focus-visible{outline-color:var(--gold-light);}
   .arabic{font-family:var(--arabe); font-weight:700;}
+  .num{font-variant-numeric:tabular-nums lining-nums;}
+  .vh{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap;}
+
+  /* Titres */
+  .kicker{display:block; margin:0 0 16px; font:500 .9375rem/1.4 var(--sans); color:var(--ink-3);}
+  .night .kicker{color:var(--on-night-3);}
+  .h2{
+    font:400 clamp(2rem, 4.4vw, 3.25rem)/1.08 var(--serif); letter-spacing:-.02em;
+    color:var(--ink); text-wrap:balance; font-variation-settings:'opsz' 60;
+  }
+  .night .h2{color:var(--on-night);}
+  .lead{max-width:36em; font-size:1.0625rem; line-height:1.65; color:var(--ink-2);}
+  .lead b{font-weight:500; color:var(--ink);}
+  .night .lead{color:var(--on-night-2);}
+  .night .lead b{color:var(--on-night);}
 
   /* ============ BOUTONS ============ */
   .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:10px; text-align:center;
-    min-height:52px; padding:0 26px; border-radius:999px; border:0; cursor:pointer;
-    background:var(--vert); color:#fff; text-decoration:none;
-    font:600 1rem/1.2 var(--sans);
-    transition:background-color .2s ease, box-shadow .2s ease;
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    min-height:48px; padding:0 20px; border-radius:10px; border:0; cursor:pointer;
+    background:var(--brand); color:#fff; text-decoration:none; text-align:center;
+    font:500 1rem/1.2 var(--sans);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.12);
+    transition:background-color .16s var(--ease), transform .16s var(--ease);
   }
-  .btn:hover{background:var(--vert-fonce);}
-  .btn-quiet{background:transparent; color:var(--foret); box-shadow:inset 0 0 0 1.5px var(--brume);}
-  .btn-quiet:hover{background:#fff; box-shadow:inset 0 0 0 1.5px var(--vert);}
-  .btn-or{background:var(--or-clair); color:var(--foret);}
-  .btn-or:hover{background:#E4C485;}
-  .btn-light{background:transparent; color:#fff; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.35);}
-  .btn-light:hover{background:rgba(255,255,255,.08); box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.6);}
+  .btn:hover{background:var(--brand-2);}
+  .btn:active{transform:scale(.98);}
+  .btn svg{width:16px; height:16px; flex-shrink:0;}
+  .btn-gold{background:var(--gold-light); color:var(--night); box-shadow:inset 0 1px 0 rgba(255,255,255,.3);}
+  .btn-gold:hover{background:#D6BC90;}
+  .btn-line{background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1px var(--line-2);}
+  .btn-line:hover{background:var(--card);}
+  .btn-night{background:transparent; color:var(--on-night); box-shadow:inset 0 0 0 1px rgba(245,246,241,.24);}
+  .btn-night:hover{background:rgba(245,246,241,.06);}
+  .link{display:inline-flex; align-items:center; gap:8px; min-height:44px; font-weight:500; text-decoration:none; color:var(--ink);}
+  .link span{text-decoration:underline; text-decoration-color:var(--line-2); text-underline-offset:4px; transition:text-decoration-color .16s var(--ease);}
+  .link:hover span{text-decoration-color:currentColor;}
+  .link svg{width:16px; height:16px;}
 
-  /* ============ NAV ============ */
-  .nav{
-    position:sticky; top:0; z-index:50;
-    background:rgba(245,246,241,.92);
-    -webkit-backdrop-filter:saturate(1.3) blur(12px); backdrop-filter:saturate(1.3) blur(12px);
-    border-bottom:1px solid var(--brume);
-  }
-  .nav-inner{display:flex; align-items:center; gap:10px; height:var(--nav-h);}
-  .brand{display:flex; align-items:center; gap:10px; text-decoration:none; margin-right:auto; min-height:44px;}
-  .brand svg{width:28px; height:34px; flex-shrink:0;}
-  .brand-name{font:600 .98rem/1.1 var(--serif); color:var(--foret);}
-  .brand-name small{display:block; font:500 .74rem/1.4 var(--sans); color:var(--encre-doux);}
+  /* ============ LOGO OFFICIEL ============
+     Tracés et textes repris du PDF officiel, sans modification.
+     Vert de la charte sur fond clair, crème sur fond sombre ; briques et HUMANITY en or. */
+  .logo{display:block; color:var(--brand); --brick:var(--gold); --tag:var(--gold);}
+  .on-night .logo, footer .logo{color:var(--on-night);}
+  .logo-mark{aspect-ratio:204 / 267; height:100%;}
+  .logo-type{aspect-ratio:391.7 / 64;}
+  .logo-full{aspect-ratio:403.68 / 374;}
+
+  /* ============ NAVIGATION ============ */
+  .nav{position:sticky; top:0; z-index:50; background:rgba(245,246,241,.96); border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex; align-items:center; gap:8px; height:var(--nav-h);}
+  /* En-tête : symbole et nom côte à côte (le logo empilé serait illisible à cette hauteur) */
+  .brand{display:flex; align-items:center; gap:10px; margin-right:auto; min-height:44px; min-width:0; text-decoration:none;}
+  .brand .logo-mark{height:32px; width:auto; flex-shrink:0;}
+  .brand .logo-type{height:26px; width:auto; flex-shrink:1; min-width:0;}
+  @media (max-width:359px){ .brand .logo-type{height:22px;} .brand .logo-mark{height:28px;} }
+  @media (min-width:720px){ .brand{gap:12px;} .brand .logo-mark{height:38px;} .brand .logo-type{height:31px;} }
+  @media (min-width:960px){ .brand .logo-mark{height:42px;} .brand .logo-type{height:34px;} }
   .nav-links{display:none;}
-  .nav-links a{text-decoration:none; font-weight:500; font-size:.94rem; color:var(--encre-doux); transition:color .2s; padding:10px 0;}
-  .nav-links a:hover{color:var(--foret);}
-  .lang-btn{
-    display:inline-flex; align-items:center; gap:4px; min-height:44px; padding:0 14px;
-    background:#fff; border:1px solid var(--brume); border-radius:999px; cursor:pointer;
-    font:600 .8rem/1 var(--sans); color:var(--encre-doux); /* contraste ≥ 4,5:1 (WCAG AA) */
+  .nav-links a{position:relative; padding:8px 0; text-decoration:none; font-size:.9375rem; font-weight:500; color:var(--ink-2); transition:color .16s var(--ease);}
+  .nav-links a:hover{color:var(--ink);}
+  .lang{display:inline-flex; padding:4px; gap:2px; border-radius:10px; background:var(--paper-2);}
+  .lang button{
+    min-width:40px; min-height:36px; padding:0 8px; border:0; border-radius:8px; cursor:pointer;
+    background:transparent; color:var(--ink-2); font:500 .8125rem/1 var(--sans);
+    transition:background-color .16s var(--ease), color .16s var(--ease);
   }
-  .lang-opt.is-active{color:var(--foret);}
-  .menu-btn{
-    width:44px; height:44px; display:grid; place-items:center;
-    background:none; border:0; color:var(--foret); cursor:pointer; margin-right:-10px; border-radius:10px;
-  }
+  .lang button[aria-pressed="true"]{background:var(--card); color:var(--ink); box-shadow:0 1px 2px rgba(0,0,0,.06);}
+  .nav-cta{display:none;}
+  .menu-btn{width:44px; height:44px; display:grid; place-items:center; margin-right:-8px; background:none; border:0; border-radius:8px; color:var(--ink); cursor:pointer;}
   .menu-btn .ic-close{display:none;}
   .menu-btn[aria-expanded="true"] .ic-open{display:none;}
   .menu-btn[aria-expanded="true"] .ic-close{display:block;}
-  .nav-cta{display:none; min-height:44px; padding:0 20px; font-size:.94rem;}
-  /* padding-top/bottom seulement : les marges latérales viennent de .wrap */
-  .menu-sheet{border-top:1px solid var(--brume); padding-top:4px; padding-bottom:20px; max-height:calc(100vh - var(--nav-h)); overflow-y:auto;}
+  .menu-sheet{padding-top:8px; padding-bottom:24px; border-top:1px solid var(--line); max-height:calc(100vh - var(--nav-h)); overflow-y:auto;}
   .menu-sheet[hidden]{display:none;}
-  .menu-sheet a{display:flex; align-items:center; min-height:52px; font:500 1.2rem/1.2 var(--serif); color:var(--foret); text-decoration:none; border-bottom:1px solid var(--brume);}
-  .menu-sheet .btn{margin-top:18px; width:100%; font:600 1rem/1.2 var(--sans); color:#fff; border-bottom:0;}
+  .menu-sheet a:not(.btn){display:flex; align-items:center; min-height:56px; border-bottom:1px solid var(--line); text-decoration:none; font:400 1.375rem/1.2 var(--serif); color:var(--ink);}
+  .menu-sheet .btn{width:100%; margin:16px 0; border-bottom:0;}
+  /* Ordinateur : Le projet · Transparence · [Faire un don] · Contact | FR/EN */
   @media (min-width:960px){
-    .nav-links{display:flex; gap:28px; margin-right:14px;}
+    .nav-links{display:flex; align-items:center; gap:28px;}
+    .nav-links a.nav-cta{display:inline-flex; min-height:44px; padding:0 20px; color:#fff;}
+    .nav-links a.nav-cta:hover{color:#fff;}
+    .lang{position:relative; margin-left:29px;}
+    .lang::before{content:""; position:absolute; left:-15px; top:10px; bottom:10px; width:1px; background:var(--line-2);}
     .menu-btn, .menu-sheet{display:none !important;}
-    .nav-cta{display:inline-flex;}
   }
+  @media (min-width:960px) and (max-width:1079px){ .nav-links{gap:20px;} .lang{margin-left:21px;} .lang::before{left:-11px;} }
 
-  /* ============ HERO ============ */
-  .hero{padding:0 0 64px;}
-  .hero-grid{display:grid; grid-template-areas:"photo" "card" "text";}
-  .hero-photo{grid-area:photo; position:relative; margin:0 calc(var(--gutter) * -1);}
-  .hero-photo img{
-    width:100%; aspect-ratio:4 / 3.4; object-fit:cover; object-position:50% 45%;
-    border-radius:0 0 28px 28px;
-  }
-  .hero-photo figcaption{
-    position:absolute; left:var(--gutter); right:var(--gutter); top:14px; width:fit-content;
-    font-size:.76rem; line-height:1.35; color:#fff;
-    background:rgba(15,59,46,.76); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
-    padding:7px 12px; border-radius:12px;
-  }
-  @media (min-width:600px) and (max-width:959px){
-    .hero-photo img{aspect-ratio:16 / 10;}
-  }
-
-  .live-card{
-    grid-area:card; position:relative; z-index:2;
-    margin:-72px 4px 0; padding:18px 18px 16px;
-    background:#fff; border-radius:20px;
-    border:1px solid rgba(15,59,46,.07);
-    box-shadow:0 24px 44px -26px rgba(15,59,46,.5);
-  }
-  .lc-top{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:14px;}
-  .lc-amount{margin:0; font-size:.9rem; color:var(--encre-doux);}
-  .lc-amount b{font:600 1.65rem/1 var(--serif); color:var(--foret); margin-right:6px;}
-  .lc-pct{margin:0; font:600 .9rem/1 var(--sans); color:var(--vert);}
-  .lc-foot{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:4px 12px; margin-top:12px; font-size:.84rem; color:var(--encre-doux);}
-  .lc-foot a{color:var(--vert); font-weight:600; text-decoration:none; min-height:44px; display:inline-flex; align-items:center;}
-  .lc-foot a:hover{text-decoration:underline; text-underline-offset:3px;}
-
-  .hero-text{grid-area:text; padding-top:36px;}
-  .bismillah{display:block; margin:0 0 14px; font-size:1.3rem; line-height:1.7; color:var(--or); text-align:left;}
+  /* ============ ACCUEIL ============ */
+  .hero{padding:40px 0 64px; overflow:hidden;}
+  .hero-grid{display:grid; gap:48px;}
+  .bismillah{display:block; text-align:left; margin-bottom:20px; font-size:1.375rem; line-height:1.6; color:var(--gold-ink);}
   .hero h1{
-    margin:0 0 20px; color:var(--foret);
-    font-family:var(--serif); font-weight:500;
-    font-size:clamp(2.4rem, 9.4vw, 4.5rem); line-height:1.03; letter-spacing:-.022em;
-    text-wrap:balance;
+    margin-bottom:24px; color:var(--ink);
+    font:400 clamp(2.5rem, 6.4vw, 4.75rem)/1.02 var(--serif); letter-spacing:-.03em;
+    font-variation-settings:'opsz' 72; text-wrap:balance;
   }
-  .hero h1 em{font-style:normal;}
-  .lead{margin:0 0 28px; max-width:33em; font-size:1.06rem; line-height:1.65; color:var(--encre-doux);}
-  .ctas{display:flex; flex-direction:column; gap:10px;}
-  @media (min-width:560px){ .ctas{flex-direction:row; flex-wrap:wrap;} }
+  .hero h1 .soft{color:var(--brand);}
+  .hero .lead{font-size:1.125rem; margin-bottom:32px;}
+  .ctas{display:flex; flex-wrap:wrap; align-items:center; gap:12px 24px;}
+  .registry{display:flex; flex-wrap:wrap; gap:16px 32px; margin-top:40px; padding-top:24px; border-top:1px solid var(--line);}
+  .registry div{display:flex; flex-direction:column-reverse; gap:2px;}
+  .registry dt{font-size:.8125rem; color:var(--ink-3);}
+  .registry dd{font:500 .9375rem/1.3 var(--sans); color:var(--ink);}
 
-  .trust{
-    display:grid; grid-template-columns:1fr 1fr; gap:18px 20px;
-    margin:36px 0 0; padding-top:22px; border-top:1px solid var(--brume);
+  /* L'arche : la forme du logo devient le cadre de la photo de terrain */
+  .arch{position:relative; width:min(100%, 520px); margin:0 auto; padding:0 0 72px;}
+  .arch-frame{position:relative;}
+  .arch-frame::before{
+    content:""; position:absolute; inset:-12px -12px 0; z-index:0; pointer-events:none;
+    border:1px solid rgba(17,57,46,.28); border-bottom:0;
+    border-radius:50% 50% 0 0 / 41% 41% 0 0;
   }
-  .trust div{display:flex; flex-direction:column-reverse; gap:2px; min-width:0;}
-  .trust dt{font-size:.8rem; color:var(--encre-doux);}
-  .trust dd{margin:0; font:600 1rem/1.3 var(--serif); color:var(--foret); overflow-wrap:anywhere;}
-  .trust div:last-child{grid-column:1 / -1;}
-
+  .arch img{
+    position:relative; z-index:1; width:100%; aspect-ratio:4 / 5; object-fit:cover; object-position:52% 42%;
+    border-radius:50% 50% 12px 12px / 40% 40% 12px 12px; background:var(--paper-2);
+  }
+  .cap-desk{display:none;}
+  .cap-mobile{margin:16px auto 0; max-width:32em; font-size:.8125rem; line-height:1.45; color:var(--ink-3); text-align:center;}
+  .plaque{
+    position:absolute; z-index:2; left:50%; bottom:0; transform:translateX(-50%);
+    width:calc(100% - 32px); max-width:400px;
+    padding:20px 20px 16px; border-radius:16px;
+    background:var(--card); border:1px solid var(--line);
+    box-shadow:0 8px 24px rgba(22,32,27,.08);
+  }
+  .plaque-top{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:16px;}
+  .plaque-amount{font-size:.875rem; color:var(--ink-2);}
+  .plaque-amount b{display:block; margin-bottom:4px; font:500 2rem/1 var(--serif); color:var(--ink); letter-spacing:-.01em; font-variation-settings:'opsz' 36;}
+  .plaque-pct{font:500 .9375rem/1 var(--sans); color:var(--gold-ink);}
+  .plaque-foot{display:flex; justify-content:space-between; align-items:center; gap:12px; margin-top:12px; font-size:.8125rem; color:var(--ink-3);}
+  .plaque-foot a{display:inline-flex; align-items:center; min-height:44px; margin:-12px 0; font-weight:500; color:var(--ink); text-decoration:underline; text-decoration-color:var(--line-2); text-underline-offset:4px;}
+  .plaque-foot a:hover{text-decoration-color:currentColor;}
+  /* Mobile : la photo arrive juste après les boutons, le registre légal après la photo */
+  @media (max-width:959px){
+    .hero-grid{gap:0;}
+    .hero-text{display:contents;}
+    .hero-media{order:2; margin-top:48px;}
+    .registry{order:3;}
+  }
   @media (min-width:960px){
-    .hero{padding:48px 0 104px;}
-    .hero-grid{
-      grid-template-columns:1.04fr .96fr; grid-template-rows:auto auto;
-      grid-template-areas:"text photo" "text card"; column-gap:72px;
-    }
-    .hero-text{grid-row:1 / 3; align-self:center; padding-top:0;}
-    .hero-photo{margin:0;}
-    .hero-photo img{aspect-ratio:4 / 4.3; border-radius:28px;}
-    .hero-photo figcaption{left:18px; right:18px; top:18px;}
-    .live-card{margin:-120px 0 0 -56px; width:440px; max-width:calc(100% + 56px); justify-self:start; padding:22px 22px 18px;}
-    .trust{grid-template-columns:repeat(3, auto); justify-content:start; column-gap:44px;}
-    .trust div:last-child{grid-column:auto;}
+    .hero{padding:72px 0 112px;}
+    .hero-grid{grid-template-columns:minmax(0, 1.1fr) minmax(0, .9fr); gap:72px; align-items:center;}
+    .arch{margin:0 0 0 auto; padding-bottom:88px;}
+    .plaque{left:auto; right:-24px; transform:none; width:360px;}
+    .cap-mobile{display:none;}
+    .cap-desk{display:block; position:absolute; left:0; bottom:12px; max-width:160px; font-size:.8125rem; line-height:1.45; color:var(--ink-3);}
   }
 
-  /* ============ MUR DE BRIQUES ============ */
-  .wall{display:grid; grid-template-columns:repeat(var(--cols), minmax(0, 1fr)); gap:var(--mortar, 4px);}
+  /* ============ BRIQUES ============ */
+  .bricks{display:grid; gap:var(--mortar, 4px);}
   .brick{
-    grid-column:span 2; aspect-ratio:2.2 / 1; position:relative; border-radius:2px;
-    background:var(--brick-empty-bg);
-    box-shadow:inset 0 0 0 1px var(--brick-empty-line);
+    position:relative; border-radius:2px; aspect-ratio:2.2 / 1;
+    background:var(--brick-empty); box-shadow:inset 0 0 0 1px var(--brick-line);
   }
-  .brick.cap{grid-column:span 1; aspect-ratio:auto; background:var(--brick-cap); box-shadow:none;}
   .brick::before{
     content:""; position:absolute; inset:0; border-radius:inherit;
-    background:linear-gradient(180deg, #D6AA5B 0%, #B98A3E 55%, #A47630 100%);
-    box-shadow:inset 0 1px 0 rgba(255,255,255,.3), inset 0 -1px 0 rgba(60,35,0,.22);
-    opacity:0; transform:translateY(-10px);
-    transition:opacity .3s ease, transform .5s cubic-bezier(.2,.8,.2,1);
+    background:linear-gradient(180deg, #C4A473 0%, #AE8B53 58%, #977645 100%);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.28), inset 0 -1px 0 rgba(70,40,0,.2);
+    opacity:0; transform:translateY(-8px);
+    transition:opacity .3s var(--ease), transform .5s var(--ease);
   }
   .brick.on::before{opacity:1; transform:none;}
-  .brick.next{
-    background:linear-gradient(90deg, var(--brick-partial) var(--p, 0%), var(--brick-empty-bg) var(--p, 0%));
-    box-shadow:inset 0 0 0 1.5px var(--or-clair);
-  }
-  .wall-mini{
-    --mortar:2px;
-    --brick-empty-bg:#F1F4F0; --brick-empty-line:#DDE5DE; --brick-cap:#E8ECE7; --brick-partial:rgba(185,138,62,.45);
-  }
-  .wall-mini .brick{border-radius:1.5px; aspect-ratio:1.45 / 1;}
-  .wall-mini .brick.cap{aspect-ratio:auto;}
-  .wall-mini .brick::before{transition:none;}
-  .wall-big{
-    --brick-empty-bg:rgba(255,255,255,.035); --brick-empty-line:rgba(221,229,222,.2);
-    --brick-cap:rgba(255,255,255,.07); --brick-partial:rgba(216,180,110,.5);
-  }
+  .brick.next{background:linear-gradient(90deg, var(--brick-partial) var(--p, 0%), var(--brick-empty) var(--p, 0%)); box-shadow:inset 0 0 0 1px var(--gold);}
+  .brick.cap{aspect-ratio:auto; background:var(--brick-cap); box-shadow:none;}
+  .brick.cap::before{display:none;}
+
+  .row-bricks{--mortar:3px; grid-template-columns:repeat(20, minmax(0, 1fr)); --brick-empty:var(--paper-2); --brick-line:rgba(22,32,27,.06); --brick-partial:rgba(174,139,83,.5);}
+  .row-bricks .brick{aspect-ratio:1.5 / 1; border-radius:1.5px;}
+  .row-bricks .brick::before{transition:none;}
+
+  .wall{grid-template-columns:repeat(var(--cols), minmax(0, 1fr)); --mortar:4px;
+    --brick-empty:rgba(245,246,241,.04); --brick-line:rgba(245,246,241,.14); --brick-cap:rgba(245,246,241,.07); --brick-partial:rgba(201,171,120,.55);}
+  @media (min-width:960px){ .wall{--mortar:6px;} }
 
   /* ============ CHANTIER (cagnotte) ============ */
-  .chantier{background:var(--foret); color:#fff; padding:64px 0 72px; position:relative; overflow:hidden;}
-  .chantier-grid{display:grid; grid-template-areas:"head" "wall" "figures" "stats"; gap:36px; min-width:0;}
-  .chantier-grid > *{min-width:0;}
-  .ch-head{grid-area:head;}
-  .ch-status{display:flex; align-items:center; gap:10px; margin:0 0 14px; font-size:.86rem; color:rgba(255,255,255,.75);}
-  .live-dot{width:8px; height:8px; border-radius:50%; background:#6FDC97; flex-shrink:0; box-shadow:0 0 0 4px rgba(111,220,151,.16);}
-  .pb-title{
-    margin:0 0 16px; color:#fff;
-    font:500 clamp(1.9rem, 6.6vw, 3rem)/1.1 var(--serif); letter-spacing:-.015em; text-wrap:balance;
-  }
-  .pb-title #js-remaining-title{white-space:nowrap;}
-  .pb-text{margin:0; max-width:36em; font-size:1rem; line-height:1.65; color:rgba(255,255,255,.8);}
-  .pb-text b{color:#fff; font-weight:600;}
-
-  .ch-wall{grid-area:wall;}
-  .wall-frame{position:relative; padding-top:6px;}
-  .wall-ground{height:2px; margin-top:6px; background:rgba(216,180,110,.45); border-radius:2px;}
-  .wall-scale{display:flex; justify-content:space-between; margin-top:8px; font-size:.78rem; color:rgba(255,255,255,.6);}
-  .wall-legend{margin:14px 0 0; font-size:.86rem; color:rgba(255,255,255,.66);}
+  .night{background:var(--night); color:var(--on-night);}
+  .chantier{padding:72px 0;}
+  .ch-head{max-width:760px; margin-bottom:48px;}
+  .ch-status{display:flex; flex-wrap:wrap; align-items:center; gap:4px 12px; margin-bottom:16px; font-size:.875rem; color:var(--on-night-3);}
+  .ch-status .sep{width:3px; height:3px; border-radius:50%; background:currentColor;}
+  .ch-title{margin-bottom:20px;}
+  .ch-title .amount{color:var(--gold-light); white-space:nowrap;}
+  .ch-grid{display:grid; gap:48px; min-width:0;}
+  .ch-grid > *{min-width:0;}
+  .wall-frame{position:relative; padding-top:8px;}
+  .wall-ground{height:2px; margin-top:8px; border-radius:2px; background:rgba(201,171,120,.4);}
+  .wall-scale{display:flex; justify-content:space-between; margin-top:8px; font-size:.8125rem; color:var(--on-night-3);}
+  .wall-legend{margin-top:16px; font-size:.875rem; color:var(--on-night-3);}
   .wall-tag{
-    position:absolute; left:0; top:0; z-index:3;
-    transform:translate(-50%, calc(-100% - 9px));
-    display:inline-flex; align-items:center; min-height:34px; padding:0 13px; white-space:nowrap;
-    background:var(--or-clair); color:var(--foret); border-radius:999px;
-    font:700 .8rem/1 var(--sans); text-decoration:none;
-    box-shadow:0 10px 22px -10px rgba(0,0,0,.5);
-    opacity:0; visibility:hidden; transition:opacity .3s ease;
+    position:absolute; left:0; top:0; z-index:3; transform:translate(-50%, calc(-100% - 10px));
+    display:inline-flex; align-items:center; min-height:32px; padding:0 12px; white-space:nowrap;
+    background:var(--gold-light); color:var(--night); border-radius:8px; text-decoration:none;
+    font:500 .8125rem/1 var(--sans);
+    box-shadow:0 8px 20px -8px rgba(0,0,0,.5);
+    opacity:0; visibility:hidden; transition:opacity .3s var(--ease), translate .3s var(--ease); translate:0 6px;
   }
-  .wall-tag::after{
-    content:""; position:absolute; top:100%; left:calc(50% + var(--arrow, 0px)); transform:translateX(-50%);
-    border:6px solid transparent; border-top-color:var(--or-clair);
-  }
-  .wall-tag.is-shown{opacity:1; visibility:visible;}
-  .wall-tag.pop{animation:pop .6s cubic-bezier(.2,.9,.3,1.4);}
-  @keyframes pop{0%{transform:translate(-50%, calc(-100% - 2px)) scale(.7);} 100%{transform:translate(-50%, calc(-100% - 9px)) scale(1);}}
+  .wall-tag::after{content:""; position:absolute; top:100%; left:calc(50% + var(--arrow, 0px)); transform:translateX(-50%); border:6px solid transparent; border-top-color:var(--gold-light);}
+  .wall-tag.is-shown{opacity:1; visibility:visible; translate:0 0;}
 
-  .ch-figures{grid-area:figures;}
-  .bar-numbers{display:flex; align-items:baseline; flex-wrap:wrap; gap:6px 12px; margin-bottom:4px;}
-  .bar-numbers .raised{font:600 clamp(2.4rem, 9vw, 3.2rem)/1 var(--serif); color:var(--or-clair); letter-spacing:-.01em;}
-  .bar-numbers .goal{font-size:.95rem; color:rgba(255,255,255,.72);}
-  #js-donors-label{display:block; font-size:.95rem; color:rgba(255,255,255,.88); margin-bottom:4px;}
-  #js-donors-label[hidden]{display:none;}
-  .source-line{margin:0 0 22px; font-size:.84rem; line-height:1.5; color:rgba(255,255,255,.66);}
-  .ch-figures .btn{width:100%;}
-  .live-link{
-    display:flex; align-items:center; gap:10px; min-height:44px; margin-top:10px;
-    font-size:.88rem; font-weight:500; color:rgba(255,255,255,.88); text-decoration:none;
-  }
-  .live-link:hover span:last-child{text-decoration:underline; text-underline-offset:3px;}
-  .calc-note{
-    margin:18px 0 0; padding:14px 16px; border-radius:14px;
-    background:rgba(255,255,255,.06); font-size:.88rem; line-height:1.6; color:rgba(255,255,255,.8);
-  }
-  .calc-note b{color:var(--or-clair); font-weight:600;}
-  .share-row{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-top:20px; padding-top:18px; border-top:1px solid rgba(255,255,255,.12);}
-  .share-label{font-size:.86rem; color:rgba(255,255,255,.7);}
+  .figures .raised{display:block; font:400 clamp(3rem, 8vw, 4.5rem)/1 var(--serif); letter-spacing:-.025em; color:var(--gold-light); font-variation-settings:'opsz' 72;}
+  .figures .goal{display:block; margin-top:8px; font-size:1rem; color:var(--on-night-2);}
+  .figures .donors{display:block; margin-top:4px; font-size:1rem; color:var(--on-night);}
+  .figures .donors[hidden]{display:none;}
+  .figures .source{margin:16px 0 24px; font-size:.8125rem; line-height:1.5; color:var(--on-night-3);}
+  .figures .btn{width:100%;}
+  .figures .link{margin-top:8px; font-size:.9375rem; color:var(--on-night-2);}
+  .figures .link span{text-decoration-color:rgba(245,246,241,.3);}
+  .share{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin-top:24px; padding-top:20px; border-top:1px solid var(--line-night);}
+  .share-label{font-size:.875rem; color:var(--on-night-3);}
   .share-buttons{display:flex; flex-wrap:wrap; gap:8px;}
   .share-btn{
-    display:inline-flex; align-items:center; gap:7px; min-height:44px; padding:0 15px;
-    background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.18); border-radius:999px;
-    color:#fff; font:600 .84rem/1 var(--sans); text-decoration:none; cursor:pointer;
-    transition:background-color .2s, border-color .2s;
+    display:inline-flex; align-items:center; gap:8px; min-height:44px; padding:0 14px; cursor:pointer;
+    background:rgba(245,246,241,.05); border:1px solid var(--line-night); border-radius:8px;
+    color:var(--on-night); font:500 .875rem/1 var(--sans); text-decoration:none;
+    transition:background-color .16s var(--ease), border-color .16s var(--ease);
   }
-  .share-btn:hover{background:rgba(255,255,255,.14); border-color:rgba(255,255,255,.34);}
+  .share-btn:hover{background:rgba(245,246,241,.1); border-color:rgba(245,246,241,.24);}
+  .share-btn svg{width:16px; height:16px;}
 
-  .ch-stats{grid-area:stats; display:grid; grid-template-columns:1fr 1fr; margin:0; border-top:1px solid rgba(255,255,255,.14);}
-  .ch-stats div{padding:18px 14px 18px 0; border-bottom:1px solid rgba(255,255,255,.14); display:flex; flex-direction:column-reverse; justify-content:flex-end; gap:4px; min-width:0;}
-  .ch-stats div:nth-child(odd){border-right:1px solid rgba(255,255,255,.14);}
-  .ch-stats div:nth-child(even){padding-left:14px;}
-  .ch-stats dd{margin:0; font:600 1.6rem/1 var(--serif); color:var(--or-clair);}
-  .ch-stats dt{font-size:.84rem; line-height:1.45; color:rgba(255,255,255,.75);}
+  .facts{display:grid; grid-template-columns:repeat(3, minmax(0, 1fr)); margin-top:64px; border-top:1px solid var(--line-night);}
+  .facts div{display:flex; flex-direction:column-reverse; justify-content:flex-end; gap:8px; padding:24px 12px 0 0;}
+  .facts div + div{padding-left:12px; border-left:1px solid var(--line-night);}
+  .facts dd{font:400 clamp(1.75rem, 5vw, 2.5rem)/1 var(--serif); color:var(--on-night); font-variation-settings:'opsz' 48;}
+  .facts dt{font-size:.8125rem; line-height:1.45; color:var(--on-night-3);}
+  @media (max-width:599px){
+    .facts{grid-template-columns:1fr;}
+    .facts div, .facts div + div{display:grid; grid-template-columns:112px minmax(0, 1fr); align-items:baseline; gap:16px; padding:20px 0; border-left:0; border-bottom:1px solid var(--line-night);}
+    .facts dd{order:-1;}
+    .facts dt{font-size:.875rem;}
+  }
 
   @media (min-width:960px){
-    .chantier{padding:104px 0 112px;}
-    .chantier-grid{
-      grid-template-columns:1.45fr 1fr; column-gap:72px; row-gap:56px;
-      grid-template-areas:"head head" "wall figures" "stats stats";
-    }
-    .ch-head{max-width:760px;}
-    .ch-figures{align-self:end;}
-    .ch-stats{grid-template-columns:repeat(4, 1fr);}
-    .ch-stats div, .ch-stats div:nth-child(even){padding:22px 24px; border-right:1px solid rgba(255,255,255,.14);}
-    .ch-stats div:first-child{padding-left:0;}
-    .ch-stats div:last-child{border-right:0;}
-    .wall-big{--mortar:5px;}
+    .chantier{padding:120px 0;}
+    .ch-head{margin-bottom:64px;}
+    .ch-grid{grid-template-columns:minmax(0, 1.5fr) minmax(0, 1fr); gap:80px; align-items:end;}
+    .facts{margin-top:88px;}
+    .facts div{padding:32px 32px 0 0;}
+    .facts div + div{padding-left:32px;}
+    .facts dt{font-size:.875rem;}
   }
 
-  /* ============ SECTIONS ============ */
-  .section{padding:72px 0;}
-  .section-white{background:var(--blanc);}
-  @media (min-width:960px){ .section{padding:112px 0;} }
-  .sec-head{max-width:720px; margin-bottom:40px;}
-  .sec-kicker{margin:0 0 12px; font-size:.92rem; font-weight:600; color:var(--vert);}
-  .sec-title{margin:0 0 16px; color:var(--foret); font:500 clamp(1.85rem, 6vw, 2.8rem)/1.12 var(--serif); letter-spacing:-.015em; text-wrap:balance;}
-  .sec-lead{margin:0; max-width:38em; font-size:1.04rem; line-height:1.7; color:var(--encre-doux);}
-  .sec-lead b{color:var(--foret); font-weight:600;}
+  /* ============ SECTIONS CLAIRES ============ */
+  .section{padding:80px 0;}
+  .section.card-bg{background:var(--card);}
+  @media (min-width:960px){ .section{padding:128px 0;} }
 
-  /* Projet : répartition du budget */
-  .budget-bar{display:flex; gap:3px; height:16px; border-radius:999px; overflow:hidden; margin-bottom:8px;}
-  .budget-bar span{flex:0 0 var(--w); background:var(--c);}
-  .budget-scale{display:flex; justify-content:space-between; font-size:.8rem; color:var(--encre-doux); margin-bottom:28px;}
-  .budget-items{display:grid; margin:0; padding:0; list-style:none; border-top:1px solid var(--brume);}
-  .budget-items li{padding:22px 0; border-bottom:1px solid var(--brume); display:grid; grid-template-columns:14px 1fr; column-gap:14px;}
-  .swatch{width:14px; height:14px; border-radius:4px; background:var(--c); margin-top:6px;}
-  .budget-items h3{font:600 1.15rem/1.3 var(--serif); color:var(--foret); margin-bottom:6px;}
-  .budget-items p{margin:0 0 10px; font-size:.95rem; line-height:1.6; color:var(--encre-doux);}
-  .budget-items .amt{font:600 1.25rem/1.2 var(--serif); color:var(--foret);}
-  .budget-items .amt small{font:400 .82rem/1 var(--sans); color:var(--encre-doux); margin-left:6px;}
-  .budget-total{
-    margin-top:28px; padding:24px; border-radius:20px; background:var(--foret); color:#fff;
-    display:grid; gap:14px;
+  /* Le projet : un registre de dépenses */
+  .projet-grid{display:grid; gap:40px;}
+  .projet-head .lead{margin-top:20px;}
+  .ledger-total{display:flex; align-items:baseline; justify-content:space-between; gap:16px; margin-bottom:16px;}
+  .ledger-total span{font-size:.9375rem; color:var(--ink-3);}
+  .ledger-total b{font:400 clamp(2.25rem, 5vw, 3rem)/1 var(--serif); letter-spacing:-.02em; color:var(--ink); font-variation-settings:'opsz' 60;}
+  .budget-bar{display:flex; gap:3px; height:12px; margin-bottom:8px;}
+  .budget-bar span{flex:0 0 calc(var(--w) - 2px); background:var(--c); border-radius:2px;}
+  .budget-scale{display:flex; justify-content:space-between; margin-bottom:32px; font-size:.8125rem; color:var(--ink-3);}
+  .ledger{margin:0; padding:0; list-style:none; border-top:1px solid var(--line-2);}
+  .ledger li{display:grid; grid-template-columns:12px minmax(0, 1fr) auto; column-gap:16px; padding:24px 0; border-bottom:1px solid var(--line);}
+  .swatch{width:12px; height:12px; margin-top:8px; border-radius:2px; background:var(--c);}
+  .ledger h3{margin-bottom:4px; font:500 1.1875rem/1.35 var(--serif); color:var(--ink); font-variation-settings:'opsz' 24;}
+  .ledger p{font-size:.9375rem; line-height:1.6; color:var(--ink-2); max-width:34em;}
+  .ledger .amt{grid-column:3; grid-row:1; text-align:right; font:500 1.1875rem/1.35 var(--serif); color:var(--ink); white-space:nowrap;}
+  .ledger .amt small{display:block; font:400 .8125rem/1.4 var(--sans); color:var(--ink-3);}
+  @media (max-width:599px){
+    .ledger li{grid-template-columns:12px minmax(0, 1fr);}
+    .ledger .amt{grid-column:2; grid-row:2; margin-top:12px; text-align:left;}
+    .ledger .amt small{display:inline; margin-left:8px;}
   }
-  .budget-total h3{font:600 1.2rem/1.3 var(--serif); color:#fff; margin-bottom:6px;}
-  .budget-total p{margin:0; font-size:.95rem; line-height:1.6; color:rgba(255,255,255,.8); max-width:36em;}
-  .budget-total .amt{font:600 2rem/1 var(--serif); color:var(--or-clair);}
-  .budget-total .amt small{display:block; margin-top:6px; font:400 .84rem/1.2 var(--sans); color:rgba(255,255,255,.7);}
+  .ledger-note{display:flex; gap:12px; margin-top:24px; font-size:.9375rem; line-height:1.6; color:var(--ink-2);}
+  .ledger-note svg{flex-shrink:0; width:18px; height:18px; margin-top:3px; color:var(--ink-3);}
+  @media (min-width:960px){
+    .projet-grid{grid-template-columns:minmax(0, .8fr) minmax(0, 1.2fr); gap:96px; align-items:start;}
+    .projet-head{position:sticky; top:calc(var(--nav-h) + 48px);}
+  }
+
+  /* Terrain : un reportage photo */
+  .terrain-head{display:grid; gap:20px; margin-bottom:48px;}
+  .photo-essay{display:grid; gap:32px;}
+  .shot img{width:100%; border-radius:12px; object-fit:cover; background:var(--paper-2);}
+  .shot.wide img{aspect-ratio:4 / 3;}
+  .shot.tall img{aspect-ratio:4 / 5; object-position:50% 60%;}
+  .shot figcaption{margin-top:16px; display:grid; gap:4px;}
+  .shot figcaption b{font:500 1.125rem/1.35 var(--serif); color:var(--ink); font-variation-settings:'opsz' 24;}
+  .shot figcaption span{font-size:.9375rem; color:var(--ink-2);}
+  @media (min-width:960px){
+    .terrain-head{grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:72px; align-items:end; margin-bottom:64px;}
+    .photo-essay{grid-template-columns:minmax(0, 1.55fr) minmax(0, 1fr); gap:40px; align-items:start;}
+    .shot.tall{margin-top:96px;}
+  }
+
+  /* Hadith et récompenses */
+  .verse{padding:96px 0; text-align:center;}
+  .verse .arabic{max-width:840px; margin:0 auto 32px; font-size:clamp(1.5rem, 4.2vw, 2.25rem); line-height:2; color:var(--ink);}
+  .verse .trans{max-width:34em; margin:0 auto 16px; font:400 clamp(1.125rem, 2.4vw, 1.5rem)/1.5 var(--serif); color:var(--ink); font-variation-settings:'opsz' 30; text-wrap:balance;}
+  .verse .ref{font-size:.875rem; font-weight:500; color:var(--gold-ink);}
+  .rewards{max-width:960px; margin:72px auto 0; padding-top:40px; border-top:1px solid var(--line); text-align:left;}
+  .rewards .h2{font-size:clamp(1.625rem, 3.2vw, 2.25rem); margin-bottom:16px;}
+  .rewards-list{display:grid; gap:0; margin:32px 0 0; padding:0; list-style:none;}
+  .rewards-list li{padding:20px 0; border-top:1px solid var(--line);}
+  .rewards-list b{display:block; margin-bottom:4px; font:500 1.1875rem/1.35 var(--serif); color:var(--ink);}
+  .rewards-list span{font-size:.9375rem; color:var(--ink-2);}
   @media (min-width:860px){
-    .budget-items{grid-template-columns:repeat(3, 1fr); column-gap:40px; border-top:0;}
-    .budget-items li{border-bottom:0; border-top:1px solid var(--brume); padding-top:24px;}
-    .budget-total{grid-template-columns:1fr auto; align-items:center; padding:32px 36px;}
-    .budget-total .amt{text-align:right;}
+    .rewards{display:grid; grid-template-columns:minmax(0, 1fr) minmax(0, 1fr); gap:64px;}
+    .rewards-list{margin:0;}
+    .rewards-list li:first-child{border-top:0; padding-top:0;}
   }
+  @media (min-width:960px){ .verse{padding:136px 0;} }
 
-  /* Preuves terrain */
-  .proof-grid{display:grid; gap:32px;}
-  .proof{margin:0;}
-  .proof img{width:100%; aspect-ratio:4 / 3; object-fit:cover; border-radius:20px;}
-  .proof figcaption{margin-top:14px;}
-  .proof figcaption b{display:block; font:600 1.1rem/1.3 var(--serif); color:var(--foret); margin-bottom:4px;}
-  .proof figcaption span{font-size:.92rem; color:var(--encre-doux);}
-  @media (min-width:860px){ .proof-grid{grid-template-columns:1.3fr 1fr; align-items:start; gap:40px;} }
-
-  /* Hadith */
-  .verse{padding:80px 0; text-align:center; border-top:1px solid var(--brume); border-bottom:1px solid var(--brume);}
-  .verse .arabic{font-size:clamp(1.45rem, 4.6vw, 2.1rem); line-height:2; color:var(--foret); max-width:820px; margin:0 auto 22px;}
-  .verse .trans{font:400 clamp(1.05rem, 2.6vw, 1.25rem)/1.6 var(--serif); color:var(--encre); max-width:36em; margin:0 auto 14px;}
-  .verse .ref{margin:0; font-size:.88rem; font-weight:600; color:#8A6420;} /* doré assombri : contraste ≥ 4,5:1 (WCAG AA) */
-  @media (min-width:960px){ .verse{padding:120px 0;} }
-
-  /* Engagements */
-  .commit-list{display:grid; gap:0; margin:0; padding:0; list-style:none; border-top:1px solid var(--brume);}
-  .commit-list li{padding:24px 0; border-bottom:1px solid var(--brume); display:grid; grid-template-columns:44px 1fr; column-gap:16px;}
-  .commit-ic{width:44px; height:44px; border-radius:12px; background:#E8F1EB; color:var(--vert); display:grid; place-items:center;}
-  .commit-list h3{font:600 1.12rem/1.3 var(--serif); color:var(--foret); margin:2px 0 6px;}
-  .commit-list p{margin:0; font-size:.95rem; line-height:1.6; color:var(--encre-doux);}
-  @media (min-width:860px){
-    .commit-list{grid-template-columns:repeat(3, 1fr); column-gap:40px; border-top:0;}
-    .commit-list li{grid-template-columns:1fr; row-gap:16px; border-bottom:0; border-top:1px solid var(--brume); padding-top:28px;}
-  }
-
-  /* Étapes (vraie séquence : numérotation justifiée) */
-  .steps{list-style:none; margin:0; padding:0; display:grid; gap:0; counter-reset:step;}
-  .steps li{position:relative; padding:0 0 32px 64px;}
+  /* Parcours du don */
+  .suivi-head{max-width:720px; margin-bottom:56px;}
+  .suivi-head .lead{margin-top:20px;}
+  .steps{display:grid; gap:0; margin:0; padding:0; list-style:none; counter-reset:step;}
+  .steps li{position:relative; padding:0 0 32px 56px;}
   .steps li:last-child{padding-bottom:0;}
   .steps li::before{
     counter-increment:step; content:counter(step);
-    position:absolute; left:0; top:0; width:44px; height:44px; border-radius:50%;
-    display:grid; place-items:center; background:var(--blanc); border:1.5px solid var(--vert);
-    font:600 1.05rem/1 var(--serif); color:var(--vert);
+    position:absolute; left:0; top:-4px; width:36px; text-align:center;
+    font:400 2rem/1 var(--serif); color:var(--brand); font-variation-settings:'opsz' 48;
   }
-  .steps li:not(:last-child)::after{content:""; position:absolute; left:21px; top:48px; bottom:4px; width:2px; background:var(--brume);}
-  .steps h3{font:600 1.1rem/1.3 var(--serif); color:var(--foret); margin:9px 0 6px;}
-  .steps p{margin:0; font-size:.95rem; line-height:1.6; color:var(--encre-doux);}
+  .steps li:not(:last-child)::after{content:""; position:absolute; left:17px; top:40px; bottom:8px; width:1px; background:var(--line-2);}
+  .steps h3{margin-bottom:6px; font:500 1.1875rem/1.35 var(--serif); color:var(--ink);}
+  .steps p{font-size:.9375rem; line-height:1.6; color:var(--ink-2);}
+  .commit{margin-top:72px; padding:32px 24px; border-radius:16px; background:var(--paper-2);}
+  .commit-title{margin-bottom:24px; font:500 1.25rem/1.3 var(--serif); color:var(--ink);}
+  .commit-list{display:grid; gap:24px; margin:0; padding:0; list-style:none;}
+  .commit-list h3{display:flex; align-items:center; gap:10px; margin-bottom:6px; font:500 1rem/1.4 var(--sans); color:var(--ink);}
+  .commit-list h3 svg{width:18px; height:18px; flex-shrink:0; color:var(--ink-3);}
+  .commit-list p{padding-left:28px; font-size:.9375rem; line-height:1.6; color:var(--ink-2);}
   @media (min-width:860px){
-    .steps{grid-template-columns:repeat(4, 1fr); column-gap:28px;}
+    .steps{grid-template-columns:repeat(4, minmax(0, 1fr)); column-gap:32px;}
     .steps li{padding:64px 0 0;}
-    .steps li:not(:last-child)::after{left:52px; right:-24px; top:21px; bottom:auto; width:auto; height:2px;}
-    .steps h3{margin-top:0;}
+    .steps li::before{top:0; left:0; width:auto; text-align:left;}
+    .steps li:not(:last-child)::after{left:40px; right:-16px; top:16px; bottom:auto; width:auto; height:1px;}
+    .commit{padding:40px;}
+    .commit-list{grid-template-columns:repeat(3, minmax(0, 1fr)); gap:40px;}
   }
 
-  /* Transparence */
-  .trans-grid{display:grid; gap:40px;}
-  .trans-grid .sec-title{font-size:clamp(1.7rem, 5vw, 2.3rem);}
-  .doc-list{display:grid; gap:12px; margin:28px 0 0; padding:0; list-style:none;}
-  .doc-list li{display:grid; grid-template-columns:40px 1fr; gap:14px; align-items:center; padding:14px 16px; background:var(--calcaire); border-radius:14px;}
-  .doc-ic{width:40px; height:40px; border-radius:10px; background:#fff; color:var(--vert); display:grid; place-items:center;}
-  .doc-list b{display:block; font-size:.95rem; color:var(--foret);}
-  .doc-list span{font-size:.85rem; color:var(--encre-doux);}
-  .legal-card{background:var(--foret); color:#fff; border-radius:20px; padding:28px 24px;}
-  .legal-card h3{font:600 1.15rem/1.3 var(--serif); color:#fff; margin-bottom:12px;}
-  .legal-card dl{margin:0;}
-  .legal-row{display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid rgba(255,255,255,.14); font-size:.92rem;}
-  .legal-row:last-child{border-bottom:0;}
-  .legal-row dt{color:rgba(255,255,255,.68);}
-  .legal-row dd{margin:0; font-weight:600; color:#CFE6D6; text-align:right;}
-  @media (min-width:900px){ .trans-grid{grid-template-columns:1fr 1fr; gap:72px; align-items:center;} .legal-card{padding:36px;} }
+  /* Transparence : la fiche d'identité comme un document */
+  .trans-grid{display:grid; gap:48px;}
+  .trans-grid .lead{margin-top:20px;}
+  .docs{margin:32px 0 0; padding:0; list-style:none; border-top:1px solid var(--line);}
+  .docs li{display:grid; grid-template-columns:20px minmax(0, 1fr); gap:16px; padding:16px 0; border-bottom:1px solid var(--line);}
+  .docs svg{width:20px; height:20px; margin-top:2px; color:var(--ink-3);}
+  .docs b{display:block; font-weight:500; color:var(--ink);}
+  .docs span{font-size:.875rem; color:var(--ink-2);}
+  .fiche{
+    position:relative; padding:28px 24px; border-radius:4px;
+    background:var(--card); border:1px solid var(--line-2);
+    box-shadow:0 1px 2px rgba(0,0,0,.04), 0 12px 32px -12px rgba(22,32,27,.12);
+  }
+  .fiche-head{display:flex; align-items:center; gap:12px; padding-bottom:20px; margin-bottom:8px; border-bottom:1px solid var(--ink);}
+  .fiche-head .logo-mark{width:auto; height:32px; flex-shrink:0;}
+  .fiche-head h3{font:500 1.125rem/1.3 var(--serif); color:var(--ink);}
+  .fiche-head small{display:block; font:400 .8125rem/1.3 var(--sans); color:var(--ink-3);}
+  .fiche dl{margin:0;}
+  .fiche-row{display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px dashed var(--line-2); font-size:.9375rem;}
+  .fiche-row:last-child{border-bottom:0;}
+  .fiche-row dt{color:var(--ink-3);}
+  .fiche-row dd{font-weight:500; color:var(--ink); text-align:right;}
+  @media (min-width:960px){
+    .trans-grid{grid-template-columns:minmax(0, 1fr) minmax(0, .9fr); gap:96px; align-items:center;}
+    .fiche{padding:40px;}
+  }
 
   /* Don */
-  .don-panel{
-    max-width:640px; background:#fff; border-radius:24px; padding:32px 24px;
-    border:1px solid rgba(15,59,46,.08); box-shadow:0 30px 60px -40px rgba(15,59,46,.45);
-  }
-  .don-panel .amount{font:600 2.2rem/1 var(--serif); color:var(--foret); margin-bottom:10px;}
-  .don-panel .impact{margin:0 0 24px; font-size:1rem; color:var(--encre-doux);}
-  .don-panel .btn{width:100%;}
-  .don-panel .pay-note{margin:14px 0 0; font-size:.86rem; color:var(--encre-doux);}
+  .don{padding:80px 0; background:var(--paper-2);}
+  .don-grid{display:grid; gap:40px;}
+  .don-grid .lead{margin-top:20px;}
+  .don-card{padding:28px 24px; border-radius:16px; background:var(--card); border:1px solid var(--line); box-shadow:0 8px 24px rgba(22,32,27,.06);}
+  .don-card .label{display:block; margin-bottom:8px; font-size:.875rem; color:var(--ink-3);}
+  .don-card .amount{margin-bottom:8px; font:400 2.5rem/1 var(--serif); letter-spacing:-.02em; color:var(--ink);}
+  .don-card .impact{margin-bottom:24px; color:var(--ink-2);}
+  .don-card .btn{width:100%;}
+  .pay-note{display:flex; gap:10px; margin-top:16px; font-size:.875rem; line-height:1.5; color:var(--ink-2);}
+  .pay-note svg{flex-shrink:0; width:16px; height:16px; margin-top:2px; color:var(--ink-3);}
   .tier[hidden]{display:none;}
-  @media (min-width:720px){ .don-panel{padding:40px;} }
-
-  /* Appel final */
-  .cta-final{
-    background:var(--foret); color:#fff; border-radius:28px; padding:48px 24px; text-align:center;
+  @media (min-width:960px){
+    .don{padding:128px 0;}
+    .don-grid{grid-template-columns:minmax(0, 1.1fr) minmax(0, .9fr); gap:96px; align-items:center;}
+    .don-card{padding:40px;}
   }
-  .cta-final .arabic{font-size:1.4rem; color:var(--or-clair); margin:0 0 14px;}
-  .cta-final h2{font:500 clamp(1.6rem, 5vw, 2.3rem)/1.2 var(--serif); color:#fff; max-width:22em; margin:0 auto 16px; text-wrap:balance;}
-  .cta-final p{margin:0 auto 28px; max-width:34em; color:rgba(255,255,255,.8);}
-  .cta-final .ctas{justify-content:center;}
-  @media (min-width:720px){ .cta-final{padding:72px 48px;} }
 
-  /* ============ PIED DE PAGE ============ */
-  footer{background:var(--foret); color:rgba(255,255,255,.72); padding:56px 0 calc(28px + env(safe-area-inset-bottom));}
-  .foot-grid{display:grid; gap:32px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,.12);}
-  .foot-grid h2{font:600 .95rem/1.3 var(--sans); color:#fff; margin-bottom:12px;}
-  .foot-grid p{margin:0 0 4px; font-size:.92rem; line-height:1.7;}
-  .foot-grid a{display:flex; align-items:center; min-height:44px; font-size:.92rem; color:rgba(255,255,255,.78); text-decoration:none; overflow-wrap:anywhere;}
-  .foot-grid a:hover{color:#fff; text-decoration:underline; text-underline-offset:3px;}
-  .foot-brand{display:flex; align-items:center; gap:10px; margin-bottom:14px; color:#fff; font:600 1rem/1.2 var(--serif);}
-  .foot-brand svg{width:26px; height:32px;}
-  .foot-bottom{padding-top:22px; display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; font-size:.84rem; color:rgba(255,255,255,.6);}
-  @media (min-width:720px){ .foot-grid{grid-template-columns:repeat(2, 1fr);} }
-  @media (min-width:1000px){ .foot-grid{grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px;} }
+  /* ============ CLÔTURE + PIED DE PAGE ============ */
+  .closing{padding:96px 0 72px; text-align:center;}
+  .closing .arabic{margin-bottom:20px; font-size:1.5rem; color:var(--gold-light);}
+  .closing h2{max-width:20em; margin:0 auto 20px; font:400 clamp(1.875rem, 4.4vw, 3rem)/1.12 var(--serif); letter-spacing:-.02em; color:var(--on-night); text-wrap:balance; font-variation-settings:'opsz' 60;}
+  .closing p{max-width:34em; margin:0 auto 32px; color:var(--on-night-2);}
+  .closing .ctas{justify-content:center;}
+  footer{padding:0 0 calc(32px + env(safe-area-inset-bottom)); color:var(--on-night-2);}
+  .foot-grid{display:grid; gap:32px; padding:48px 0 32px; border-top:1px solid var(--line-night); border-bottom:1px solid var(--line-night);}
+  .foot-grid h2{margin-bottom:12px; font:500 .9375rem/1.3 var(--sans); color:var(--on-night);}
+  .foot-grid p{margin-bottom:4px; font-size:.9375rem; line-height:1.7;}
+  .foot-grid a{display:flex; align-items:center; min-height:40px; font-size:.9375rem; color:var(--on-night-2); text-decoration:none;}
+  /* Adresse e-mail : jamais coupée au milieu d'un mot ; si la colonne est trop étroite, retour à la ligne avant « @ » uniquement */
+  .foot-grid a.mail{display:inline-block; padding:10px 0; line-height:1.4; overflow-wrap:normal; word-break:normal;}
+  .foot-grid a:hover{color:var(--on-night); text-decoration:underline; text-underline-offset:4px;}
+  .foot-brand{display:block; width:200px; margin-bottom:24px;}
+  .foot-brand .logo-full{width:100%; height:auto;}
+  .foot-bottom{display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 24px; padding-top:24px; font-size:.8125rem; color:var(--on-night-3);}
+  @media (min-width:720px){ .foot-grid{grid-template-columns:repeat(2, minmax(0, 1fr));} }
+  @media (min-width:1000px){ .foot-grid{grid-template-columns:1.3fr .9fr 1fr 1.3fr; gap:40px;} .closing{padding:136px 0 104px;} }
 
   /* ============ BARRE DE DON MOBILE ============ */
   .dock{
-    position:fixed; z-index:60; left:12px; right:12px;
-    bottom:calc(12px + env(safe-area-inset-bottom));
-    display:flex; align-items:center; gap:14px;
-    padding:10px 10px 10px 18px; border-radius:20px;
-    background:var(--foret); color:#fff;
-    box-shadow:0 18px 40px -16px rgba(15,59,46,.7);
+    position:fixed; z-index:60; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom));
+    display:flex; align-items:center; gap:16px; padding:8px 8px 8px 16px; border-radius:14px;
+    background:var(--night); color:var(--on-night); box-shadow:0 12px 32px -12px rgba(11,42,33,.6);
     transform:translateY(calc(100% + 40px)); visibility:hidden;
-    transition:transform .4s cubic-bezier(.2,.8,.2,1), visibility 0s linear .4s;
+    transition:transform .4s var(--ease), visibility 0s linear .4s;
   }
-  .dock.is-shown{transform:none; visibility:visible; transition:transform .4s cubic-bezier(.2,.8,.2,1), visibility 0s;}
+  .dock.is-shown{transform:none; visibility:visible; transition:transform .4s var(--ease), visibility 0s;}
   .dock-info{flex:1; min-width:0;}
-  .dock-info p{margin:0 0 7px; font-size:.8rem; color:rgba(255,255,255,.75); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-  .dock-info b{font:600 1.05rem/1 var(--serif); color:#fff; margin-right:4px;}
-  .dock-track{height:4px; border-radius:4px; background:rgba(255,255,255,.16); overflow:hidden;}
-  .dock-track i{display:block; height:100%; width:0; background:var(--or-clair); border-radius:4px;}
-  .dock .btn{min-height:46px; padding:0 18px; font-size:.94rem; flex-shrink:0; background:var(--or-clair); color:var(--foret);}
-  /* Espace réservé sous le contenu pour que la barre ne masque jamais le pied de page */
+  .dock-info p{margin-bottom:8px; font-size:.8125rem; color:var(--on-night-2); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .dock-info b{margin-right:4px; font:500 1.0625rem/1 var(--serif); color:var(--on-night);}
+  .dock-track{height:4px; border-radius:2px; background:rgba(245,246,241,.14); overflow:hidden;}
+  .dock-track i{display:block; height:100%; width:0; border-radius:2px; background:var(--gold-light); transition:width .6s var(--ease);}
+  .dock .btn{min-height:44px; padding:0 16px; font-size:.9375rem; flex-shrink:0;}
   @media (max-width:959px){ body{padding-bottom:calc(84px + env(safe-area-inset-bottom));} }
   @media (min-width:960px){ .dock{display:none;} }
+
+  /* ============ APPARITION ============ */
+  .js [data-reveal]{opacity:0; transform:translateY(12px); transition:opacity .6s var(--ease), transform .6s var(--ease); transition-delay:var(--d, 0ms);}
+  .js [data-reveal].is-in{opacity:1; transform:none;}
 
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     *, *::before, *::after{animation:none !important; transition:none !important;}
+    .js [data-reveal]{opacity:1; transform:none;}
   }
 </style>
 </head>
 <body>
-<a href="#main" class="skip">Aller au contenu</a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- LOGO OFFICIEL : coordonnées reprises du PDF skhlogofficiel.pdf (y = 841.8898 − y_pdf). Ne pas redessiner. -->
+  <symbol id="logo-mark" viewBox="195.6378 283.945 204 267">
+    <path d="M202.6378 550.945V385.945C202.6378 333.478 245.1707 290.945 297.6378 290.945S392.6378 333.478 392.6378 385.945V550.945" fill="none" stroke="currentColor" stroke-width="14"/>
+    <g style="fill:var(--brick)"><rect x="274.6378" y="472.945" width="46" height="20" rx="2"/><rect x="247.6378" y="500.945" width="46" height="20" rx="2"/><rect x="301.6378" y="500.945" width="46" height="20" rx="2"/></g>
+  </symbol>
+  <symbol id="logo-type" viewBox="101.8 582 391.7 64">
+    <text x="103.8065" y="612.945" font-family="'SKH Logo Serif', 'DejaVu Serif', Georgia, serif" font-weight="700" font-size="38" fill="currentColor">Suleyman &amp; Kabir</text>
+    <text x="216.6839 239.723 262.3616 287.6175 309.2991 332.2601 346.1585 366.3753" y="641.945" font-family="'SKH Logo Sans', 'DejaVu Sans', Verdana, sans-serif" font-size="20" style="fill:var(--tag)">HUMANITY</text>
+    <path d="M146.8888 634.945H211.6839M383.5921 634.945H448.3872" stroke-width="1.5" style="stroke:var(--tag)"/>
+  </symbol>
+  <symbol id="logo-full" viewBox="95.8 275.945 403.68 374">
+    <use href="#logo-mark" x="195.6378" y="283.945" width="204" height="267"/>
+    <use href="#logo-type" x="101.8" y="582" width="391.7" height="64"/>
+  </symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-out" viewBox="0 0 24 24"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" fill="none" stroke="currentColor" stroke-width="1.5"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9 4.5V3h6v1.5M8.5 11l2 2 4-4M8.5 17h7" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 10.5l5-3v9l-5-3z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z M14 3v5h5M9 13h6M9 17h4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M3 11l4-4 5 3 5-3 4 4-9 8z M12 10v9" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+</svg>
+
+<a href="#main" class="skip" data-fr="Aller au contenu" data-en="Skip to content">Aller au contenu</a>
 
 <!-- ============ NAVIGATION ============ -->
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="#main" aria-label="Suleyman &amp; Kabir Humanity, accueil">
-      <svg viewBox="0 0 28 34" aria-hidden="true">
-        <path d="M2 33V14C2 7.4 7.4 2 14 2s12 5.4 12 12v19" fill="none" stroke="#0F3B2E" stroke-width="2.4"/>
-        <rect x="7" y="27" width="6" height="3.4" rx=".6" fill="#B98A3E"/>
-        <rect x="15" y="27" width="6" height="3.4" rx=".6" fill="#B98A3E"/>
-        <rect x="11" y="22.4" width="6" height="3.4" rx=".6" fill="#B98A3E"/>
-      </svg>
-      <span class="brand-name">Suleyman &amp; Kabir<small>Humanity</small></span>
+    <a class="brand" href="#main" aria-label="Suleyman &amp; Kabir Humanity">
+      <svg class="logo logo-mark" viewBox="195.6378 283.945 204 267" aria-hidden="true"><use href="#logo-mark" x="195.6378" y="283.945" width="204" height="267"/></svg>
+      <svg class="logo logo-type" viewBox="101.8 582 391.7 64" aria-hidden="true"><use href="#logo-type" x="101.8" y="582" width="391.7" height="64"/></svg>
     </a>
-    <nav class="nav-links" aria-label="Navigation principale">
+    <nav class="nav-links" aria-label="Navigation principale" data-aria-fr="Navigation principale" data-aria-en="Main navigation">
       <a href="#projet" data-fr="Le projet" data-en="The project">Le projet</a>
       <a href="#transparence" data-fr="Transparence" data-en="Transparency">Transparence</a>
-      <a href="#don" data-fr="Faire un don" data-en="Donate">Faire un don</a>
+      <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn nav-cta" data-fr="Faire un don" data-en="Donate">Faire un don</a>
       <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
     </nav>
-    <button id="lang-toggle" class="lang-btn" type="button" aria-label="Switch language / Changer de langue">
-      <span class="lang-opt lang-fr-opt is-active">FR</span><span aria-hidden="true">/</span><span class="lang-opt lang-en-opt">EN</span>
-    </button>
-    <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn nav-cta" data-fr="Je fais un don" data-en="Donate now">Je fais un don</a>
-    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-sheet" aria-label="Ouvrir le menu" data-label-open="Ouvrir le menu" data-label-close="Fermer le menu">
-      <svg class="ic-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
-      <svg class="ic-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    <div class="lang" role="group" aria-label="Langue / Language">
+      <button type="button" data-lang="fr" lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+      <button type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
+    </div>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-sheet" aria-label="Ouvrir le menu">
+      <svg class="ic-open" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+      <svg class="ic-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
-  <nav class="wrap menu-sheet" id="menu-sheet" aria-label="Menu mobile" hidden>
+  <nav class="wrap menu-sheet" id="menu-sheet" aria-label="Menu mobile" data-aria-fr="Menu mobile" data-aria-en="Mobile menu" hidden>
     <a href="#projet" data-fr="Le projet" data-en="The project">Le projet</a>
     <a href="#transparence" data-fr="Transparence" data-en="Transparency">Transparence</a>
-    <a href="#don" data-fr="Faire un don" data-en="Donate">Faire un don</a>
+    <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn" data-fr="Faire un don" data-en="Donate">Faire un don</a>
     <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
-    <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn" data-fr="Je fais un don" data-en="Donate now">Je fais un don</a>
   </nav>
 </header>
 
 <main id="main">
 
 <!-- ============ ACCUEIL ============ -->
-<section class="hero" id="hero">
+<section class="hero" id="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
-    <figure class="hero-photo">
-      <img src="/img/mosquee-priere.jpg" width="900" height="675" alt="Fidèles en prière devant une mosquée construite grâce aux donateurs" fetchpriority="high" decoding="async">
-      <figcaption data-fr="Une mosquée achevée par l'ONG El Habib, déjà au service de tout un village" data-en="A mosque completed by NGO El Habib, already serving an entire village">Une mosquée achevée par l'ONG El Habib, déjà au service de tout un village</figcaption>
-    </figure>
-
-    <div class="live-card" aria-live="polite">
-      <div class="lc-top">
-        <p class="lc-amount"><b id="js-hero-raised">9 494 €</b><span data-fr="collectés" data-en="raised">collectés</span></p>
-        <p class="lc-pct" id="js-percent">38 %</p>
+    <div class="hero-text">
+      <span class="bismillah arabic" lang="ar" dir="rtl" data-reveal>بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
+      <span class="kicker" data-reveal style="--d:60ms" data-fr="Projet Bangladesh, avec l'ONG El Habib" data-en="Bangladesh project, with NGO El Habib">Projet Bangladesh, avec l'ONG El Habib</span>
+      <h1 id="hero-title" data-reveal style="--d:120ms" data-fr="Une aumône qui <span class=&quot;soft&quot;>continue de grandir</span> après vous" data-en="A charity that <span class=&quot;soft&quot;>keeps growing</span> after you're gone">Une aumône qui <span class="soft">continue de grandir</span> après vous</h1>
+      <p class="lead" data-reveal style="--d:180ms" data-fr="Suleyman &amp; Kabir Humanity construit, avec l'ONG El Habib, un orphelinat pour 60 enfants, une mosquée et un puits d'eau potable au Bangladesh. Chaque don est tracé, du premier euro jusqu'à la dernière brique." data-en="Suleyman &amp; Kabir Humanity is building, with our partner NGO El Habib, an orphanage for 60 children, a mosque and a water well in Bangladesh. Every donation is tracked, from the first euro to the last brick.">Suleyman &amp; Kabir Humanity construit, avec l'ONG El Habib, un orphelinat pour 60 enfants, une mosquée et un puits d'eau potable au Bangladesh. Chaque don est tracé, du premier euro jusqu'à la dernière brique.</p>
+      <div class="ctas" data-reveal style="--d:240ms">
+        <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn"><span data-fr="Faire un don" data-en="Donate">Faire un don</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="#projet" class="link"><span data-fr="Découvrir le projet" data-en="Discover the project">Découvrir le projet</span><svg aria-hidden="true"><use href="#i-down"/></svg></a>
       </div>
-      <div class="wall wall-mini" id="wall-mini" aria-hidden="true"></div>
-      <div class="lc-foot">
-        <span><span data-fr="sur" data-en="of">sur</span> <span class="js-goal">25 250 €</span></span>
-        <a href="#cagnotte" data-fr="Voir le chantier ↓" data-en="See the build ↓">Voir le chantier ↓</a>
-      </div>
+      <dl class="registry" data-reveal style="--d:300ms">
+        <div><dt data-fr="Association loi 1901" data-en="French non-profit (Law 1901)">Association loi 1901</dt><dd class="num">SIREN 106 087 125</dd></div>
+        <div><dt data-fr="Journal officiel" data-en="Official Gazette">Journal officiel</dt><dd class="num">RNA W781010839</dd></div>
+        <div><dt data-fr="des dons sur le terrain" data-en="of donations go to the field">des dons sur le terrain</dt><dd class="num" data-fr="100 %" data-en="100%">100 %</dd></div>
+      </dl>
     </div>
 
-    <div class="hero-text">
-      <span class="bismillah arabic" lang="ar" dir="rtl">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</span>
-      <h1 data-fr="Une aumône qui <em>continue de grandir</em><br>après vous." data-en="A charity that <em>keeps growing</em><br>after you're gone.">Une aumône qui <em>continue de grandir</em><br>après vous.</h1>
-      <p class="lead" data-fr="Suleyman &amp; Kabir Humanity construit, avec l'ONG El Habib, un orphelinat pour 60 enfants, une mosquée et un puits d'eau potable au Bangladesh. Chaque don est tracé, du premier euro jusqu'à la dernière brique." data-en="Suleyman &amp; Kabir Humanity is building, with our partner NGO El Habib, an orphanage for 60 children, a mosque and a water well in Bangladesh. Every donation is tracked, from the first euro to the last brick.">Suleyman &amp; Kabir Humanity construit, avec l'ONG El Habib, un orphelinat pour 60 enfants, une mosquée et un puits d'eau potable au Bangladesh. Chaque don est tracé, du premier euro jusqu'à la dernière brique.</p>
-      <div class="ctas">
-        <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn" data-fr="Faire un don maintenant" data-en="Donate now">Faire un don maintenant</a>
-        <a href="#projet" class="btn btn-quiet" data-fr="Découvrir le projet ↓" data-en="Discover the project ↓">Découvrir le projet ↓</a>
-      </div>
-      <dl class="trust">
-        <div><dt data-fr="Association déclarée" data-en="Registered association">Association déclarée</dt><dd>SIREN 106087125</dd></div>
-        <div><dt data-fr="Journal Officiel" data-en="Official Gazette">Journal Officiel</dt><dd>RNA W781010839</dd></div>
-        <div><dt data-fr="des dons sur le terrain" data-en="of donations go to the field">des dons sur le terrain</dt><dd>100%</dd></div>
-      </dl>
+    <div class="hero-media" data-reveal style="--d:200ms">
+      <figure class="arch">
+        <div class="arch-frame">
+          <img src="/img/mosquee-priere.jpg" width="900" height="675" fetchpriority="high" decoding="async"
+               alt="Fidèles en prière devant une mosquée achevée par l'ONG El Habib au Bangladesh"
+               data-alt-fr="Fidèles en prière devant une mosquée achevée par l'ONG El Habib au Bangladesh"
+               data-alt-en="Worshippers praying in front of a mosque completed by NGO El Habib in Bangladesh">
+        </div>
+        <figcaption class="cap-desk" data-fr="Une mosquée achevée par l'ONG El Habib, déjà au service de tout un village" data-en="A mosque completed by NGO El Habib, already serving an entire village">Une mosquée achevée par l'ONG El Habib, déjà au service de tout un village</figcaption>
+        <div class="plaque" aria-live="polite">
+          <div class="plaque-top">
+            <p class="plaque-amount"><b class="num" id="js-hero-raised">9 494 €</b><span data-fr="collectés" data-en="raised">collectés</span></p>
+            <p class="plaque-pct num" id="js-percent">38 %</p>
+          </div>
+          <div class="bricks row-bricks" id="wall-mini" aria-hidden="true"></div>
+          <div class="plaque-foot">
+            <span><span data-fr="sur" data-en="of">sur</span> <span class="js-goal num">25 250 €</span></span>
+            <a href="#cagnotte" data-fr="Voir le chantier" data-en="See the build">Voir le chantier</a>
+          </div>
+        </div>
+      </figure>
+      <p class="cap-mobile" data-fr="Une mosquée achevée par l'ONG El Habib, déjà au service de tout un village" data-en="A mosque completed by NGO El Habib, already serving an entire village">Une mosquée achevée par l'ONG El Habib, déjà au service de tout un village</p>
     </div>
   </div>
 </section>
 
-<!-- ============ CAGNOTTE : MUR DE BRIQUES ============ -->
-<section class="chantier" id="cagnotte" aria-labelledby="chantier-title">
-  <div class="wrap chantier-grid">
-    <div class="ch-head">
-      <p class="ch-status"><span class="live-dot" aria-hidden="true"></span><span data-fr="Campagne en cours, mise à jour régulière" data-en="Ongoing campaign, regularly updated">Campagne en cours, mise à jour régulière</span></p>
-      <h2 class="pb-title" id="chantier-title"><span data-fr="Bangladesh — Il reste" data-en="Bangladesh — Only">Bangladesh — Il reste</span> <span id="js-remaining-title">15 756 €</span> <span data-fr="à réunir" data-en="left to raise">à réunir</span></h2>
-      <p class="pb-text"><span id="js-donors-sentence" data-i18n-template
+<!-- ============ CAGNOTTE : LE MUR DE BRIQUES ============ -->
+<section class="chantier night" id="cagnotte" aria-labelledby="chantier-title">
+  <div class="wrap">
+    <div class="ch-head" data-reveal>
+      <p class="ch-status"><span data-fr="Campagne en cours" data-en="Ongoing campaign">Campagne en cours</span><span class="sep" aria-hidden="true"></span><span data-fr="Bangladesh" data-en="Bangladesh">Bangladesh</span></p>
+      <h2 class="h2 ch-title" id="chantier-title"><span data-fr="Il reste" data-en="Still">Il reste</span> <span class="amount num" id="js-remaining-title">15 756 €</span> <span data-fr="à réunir pour lancer le chantier" data-en="to raise to start the build">à réunir pour lancer le chantier</span></h2>
+      <p class="lead"><span id="js-donors-sentence" data-i18n-template
          data-fr="{d} personnes ont déjà donné. "
          data-en="{d} people have already donated. ">278 personnes ont déjà donné. </span><span data-i18n-template data-id-n="js-count-5-text"
-         data-fr="Si {n} personnes de plus offrent 5€ chacune, la cagnotte est bouclée et le chantier démarre. Inch'Allah, soyez l'une d'elles."
-         data-en="If {n} more people give just €5 each, the campaign is fully funded and construction begins. Be one of them, Insha'Allah.">Si <b id="js-count-5-text">3 152</b> personnes de plus offrent 5€ chacune, la cagnotte est bouclée et le chantier démarre. Inch'Allah, soyez l'une d'elles.</span></p>
+         data-fr="Si {n} personnes de plus offrent 5 € chacune, la cagnotte est bouclée et le chantier démarre. Inch'Allah, soyez l'une d'elles."
+         data-en="If {n} more people give €5 each, the campaign is fully funded and construction begins. Be one of them, Insha'Allah.">Si <b id="js-count-5-text">3 152</b> personnes de plus offrent 5 € chacune, la cagnotte est bouclée et le chantier démarre. Inch'Allah, soyez l'une d'elles.</span></p>
     </div>
 
-    <div class="ch-wall">
-      <div class="wall-frame" id="wall-frame">
-        <div class="wall wall-big" id="wall-big" role="img" aria-label="Mur de 100 briques : 38 % financé, il reste 15 756 €."></div>
-        <a class="wall-tag" id="wall-tag" href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" data-fr="Votre brique" data-en="Your brick" tabindex="-1">Votre brique</a>
+    <div class="ch-grid">
+      <div class="ch-wall" data-reveal>
+        <div class="wall-frame" id="wall-frame">
+          <div class="bricks wall" id="wall-big" role="img" aria-label="Mur de 100 briques : 38 % financé, il reste 15 756 €."></div>
+          <a class="wall-tag" id="wall-tag" href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" data-fr="Votre brique" data-en="Your brick" tabindex="-1">Votre brique</a>
+        </div>
+        <div class="wall-ground" aria-hidden="true"></div>
+        <div class="wall-scale num" aria-hidden="true"><span>0 €</span><span class="js-goal">25 250 €</span></div>
+        <p class="wall-legend" data-i18n-template
+           data-fr="Chaque brique représente 1 % du chantier, soit {b}."
+           data-en="Each brick stands for 1% of the build, or {b}.">Chaque brique représente 1 % du chantier, soit 252,50 €.</p>
       </div>
-      <div class="wall-ground" aria-hidden="true"></div>
-      <div class="wall-scale" aria-hidden="true"><span>0 €</span><span class="js-goal">25 250 €</span></div>
-      <p class="wall-legend" data-i18n-template
-         data-fr="Chaque brique représente 1 % du chantier, soit {b}."
-         data-en="Each brick stands for 1% of the build, or {b}.">Chaque brique représente 1 % du chantier, soit 252,50 €.</p>
-    </div>
 
-    <!-- DERNIER RELEVÉ VÉRIFIÉ, INTÉGRÉ À LA PAGE (utilisé si /api/stats ne répond pas)
-         Valeurs relevées à la main sur la page CotizUp officielle. data-goal = objectif fixé par
-         l'association : il n'est jamais lu ailleurs (la page CotizUp n'affiche pas d'objectif).
-         Mise à jour courante : via /admin.html (aucun changement de code nécessaire). -->
-    <div class="ch-figures" id="donation-calc" data-goal="25250" data-raised="9494" data-donors="278" data-releve="2026-11-11">
-      <div class="bar-numbers">
-        <span class="raised" id="js-raised">9 494 €</span>
-        <span class="goal"><span data-fr="objectif" data-en="goal">objectif</span> <span class="js-goal">25 250 €</span></span>
-      </div>
-      <span id="js-donors-label">278 donateurs déjà mobilisés</span>
-      <p class="source-line" id="js-releve">Montant relevé sur la cagnotte officielle le 11 novembre 2026</p>
-      <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn btn-or" data-fr="Je fais un don" data-en="Donate now">Je fais un don</a>
-      <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="live-link">
-        <span class="live-dot" aria-hidden="true"></span> <span data-fr="Voir le montant en direct sur la cagnotte officielle →" data-en="See the live total on our official fundraising page →">Voir le montant en direct sur la cagnotte officielle →</span>
-      </a>
-      <p class="calc-note" data-i18n-template data-id-r="js-remaining" data-id-n="js-count-5"
-         data-fr="Calcul automatique : il reste {r} à collecter. Si chaque don est de <b>5 €</b>, il faut encore exactement {n} donateurs pour clôturer la cagnotte."
-         data-en="Automatic calculation: {r} still needed. If every donation is <b>€5</b>, exactly {n} more donors are needed to close the campaign.">Calcul automatique : il reste <b id="js-remaining">15 756 €</b> à collecter. Si chaque don est de <b>5 €</b>, il faut encore exactement <b id="js-count-5">3 152</b> donateurs pour clôturer la cagnotte.</p>
-      <div class="share-row">
-        <span class="share-label" data-fr="Vous ne pouvez pas donner ? Partagez :" data-en="Can't donate? Share instead:">Vous ne pouvez pas donner ? Partagez :</span>
-        <div class="share-buttons">
-          <a class="share-btn" id="share-whatsapp" href="https://wa.me/" target="_blank" rel="noopener" aria-label="Partager sur WhatsApp" data-aria-fr="Partager sur WhatsApp" data-aria-en="Share on WhatsApp">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.28a8.9 8.9 0 0 0 4.33 1.12h.01a8.93 8.93 0 0 0 8.92-8.9 8.9 8.9 0 0 0-2.36-5.62Zm-5.55 13.7a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.97.94-2.73-.18-.28a7.42 7.42 0 1 1 13.78-3.92 7.45 7.45 0 0 1-7.69 7.16Zm4.07-5.56c-.22-.11-1.31-.65-1.51-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.05-.22-.11-.93-.34-1.77-1.09-.65-.58-1.09-1.3-1.22-1.52-.13-.22-.01-.34.11-.46.11-.11.25-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.04-.41-.08-.11-.5-1.2-.69-1.65-.18-.43-.37-.37-.5-.38-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.53 2.34 3.72 3.19 2.19.85 2.19.57 2.59.53.4-.04 1.31-.53 1.49-1.05.18-.51.18-.95.13-1.05-.06-.1-.21-.16-.43-.27Z"/></svg>
-            WhatsApp
-          </a>
-          <button class="share-btn" id="share-copy" type="button">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <span id="copy-label">Copier le lien</span>
-          </button>
+      <!-- DERNIER RELEVÉ VÉRIFIÉ, INTÉGRÉ À LA PAGE (utilisé si /api/stats ne répond pas)
+           Valeurs relevées à la main sur la page CotizUp officielle. data-goal = objectif fixé par
+           l'association. Mise à jour courante : via /admin.html (aucun changement de code nécessaire). -->
+      <div class="figures" id="donation-calc" data-goal="25250" data-raised="9494" data-donors="278" data-releve="2026-11-11" data-reveal style="--d:120ms">
+        <span class="raised num" id="js-raised">9 494 €</span>
+        <span class="goal"><span data-fr="collectés sur un objectif de" data-en="raised of a goal of">collectés sur un objectif de</span> <span class="js-goal num">25 250 €</span></span>
+        <span class="donors" id="js-donors-label">278 donateurs déjà mobilisés</span>
+        <p class="source" id="js-releve">Montant relevé sur la cagnotte officielle le 11 novembre 2026</p>
+        <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn btn-gold"><span data-fr="Je pose ma brique" data-en="Add my brick">Je pose ma brique</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="link">
+          <span data-fr="Voir le montant en direct sur la cagnotte officielle" data-en="See the live total on our official fundraising page">Voir le montant en direct sur la cagnotte officielle</span><svg aria-hidden="true"><use href="#i-out"/></svg>
+        </a>
+        <div class="share">
+          <span class="share-label" data-fr="Vous ne pouvez pas donner ? Partagez" data-en="Can't donate? Share instead">Vous ne pouvez pas donner ? Partagez</span>
+          <div class="share-buttons">
+            <a class="share-btn" id="share-whatsapp" href="https://wa.me/" target="_blank" rel="noopener" aria-label="Partager sur WhatsApp" data-aria-fr="Partager sur WhatsApp" data-aria-en="Share on WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 4a8.94 8.94 0 0 0-7.74 13.4L3 21l3.7-1.28a8.9 8.9 0 0 0 4.33 1.12h.01a8.93 8.93 0 0 0 8.92-8.9 8.9 8.9 0 0 0-2.36-5.62Zm-5.55 13.7a7.4 7.4 0 0 1-3.78-1.04l-.27-.16-2.8.97.94-2.73-.18-.28a7.42 7.42 0 1 1 13.78-3.92 7.45 7.45 0 0 1-7.69 7.16Zm4.07-5.56c-.22-.11-1.31-.65-1.51-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.05-.22-.11-.93-.34-1.77-1.09-.65-.58-1.09-1.3-1.22-1.52-.13-.22-.01-.34.11-.46.11-.11.25-.28.37-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.04-.41-.08-.11-.5-1.2-.69-1.65-.18-.43-.37-.37-.5-.38-.13-.01-.28-.01-.43-.01-.15 0-.39.06-.6.28-.2.22-.79.77-.79 1.87s.81 2.17.92 2.32c.11.15 1.53 2.34 3.72 3.19 2.19.85 2.19.57 2.59.53.4-.04 1.31-.53 1.49-1.05.18-.51.18-.95.13-1.05-.06-.1-.21-.16-.43-.27Z"/></svg>
+              WhatsApp
+            </a>
+            <button class="share-btn" id="share-copy" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></svg>
+              <span id="copy-label">Copier le lien</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>
 
-    <dl class="ch-stats">
-      <div><dt data-fr="enfants accueillis dans l'orphelinat-madrassa" data-en="children welcomed in the orphanage-madrassa">enfants accueillis dans l'orphelinat-madrassa</dt><dd>60</dd></div>
-      <div><dt data-fr="fidèles accueillis dans la future mosquée" data-en="worshippers welcomed in the future mosque">fidèles accueillis dans la future mosquée</dt><dd>160-200</dd></div>
-      <div><dt data-fr="puits d'eau potable pour les ablutions et le village" data-en="water well for ablutions and the whole village">puits d'eau potable pour les ablutions et le village</dt><dd>1</dd></div>
-      <div><dt data-fr="le montant qui peut tout changer, multiplié par vous" data-en="the small amount that changes everything, multiplied by you">le montant qui peut tout changer, multiplié par vous</dt><dd>5€</dd></div>
+    <dl class="facts" data-reveal>
+      <div><dt data-fr="enfants accueillis dans l'orphelinat-madrassa" data-en="children welcomed in the orphanage-madrassa">enfants accueillis dans l'orphelinat-madrassa</dt><dd class="num">60</dd></div>
+      <div><dt data-fr="fidèles accueillis dans la future mosquée" data-en="worshippers welcomed in the future mosque">fidèles accueillis dans la future mosquée</dt><dd class="num">160–200</dd></div>
+      <div><dt data-fr="puits d'eau potable pour les ablutions et le village" data-en="water well for ablutions and the whole village">puits d'eau potable pour les ablutions et le village</dt><dd class="num">1</dd></div>
     </dl>
   </div>
 </section>
 
 <!-- ============ LE PROJET ============ -->
 <section class="section" id="projet" aria-labelledby="projet-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="sec-kicker" data-fr="Le projet Bangladesh, 25 250 €" data-en="The Bangladesh project, €25,250">Le projet Bangladesh, 25 250 €</p>
-      <h2 class="sec-title" id="projet-title" data-fr="Quatre piliers, un seul village transformé" data-en="Four pillars, one village transformed">Quatre piliers, un seul village transformé</h2>
-      <p class="sec-lead" data-fr="En partenariat avec l'ONG El Habib, chaque euro collecté est fléché vers l'un de ces quatre postes, détaillés et chiffrés avec précision." data-en="In partnership with NGO El Habib, every euro raised is allocated to one of these four items, detailed and precisely costed.">En partenariat avec l'ONG El Habib, chaque euro collecté est fléché vers l'un de ces quatre postes, détaillés et chiffrés avec précision.</p>
+  <div class="wrap projet-grid">
+    <div class="projet-head" data-reveal>
+      <span class="kicker" data-fr="Le projet Bangladesh" data-en="The Bangladesh project">Le projet Bangladesh</span>
+      <h2 class="h2" id="projet-title" data-fr="Un orphelinat, une mosquée, un puits" data-en="An orphanage, a mosque, a well">Un orphelinat, une mosquée, un puits</h2>
+      <p class="lead" data-fr="En partenariat avec l'ONG El Habib, chaque euro collecté est fléché vers l'un de ces postes, détaillés et chiffrés avec précision." data-en="In partnership with NGO El Habib, every euro raised is allocated to one of these items, detailed and precisely costed.">En partenariat avec l'ONG El Habib, chaque euro collecté est fléché vers l'un de ces postes, détaillés et chiffrés avec précision.</p>
     </div>
 
-    <div class="budget-bar" role="img" aria-label="Répartition du budget : orphelinat 12 000 €, mosquée et puits 11 150 €, pack hygiène 2 100 €.">
-      <span style="--w:47.5%; --c:#0F3B2E;"></span>
-      <span style="--w:44.2%; --c:#2C7A5B;"></span>
-      <span style="--w:8.3%; --c:#B98A3E;"></span>
-    </div>
-    <div class="budget-scale" aria-hidden="true"><span>0 €</span><span>25 250 €</span></div>
-
-    <ul class="budget-items">
-      <li style="--c:#0F3B2E;">
-        <span class="swatch" aria-hidden="true"></span>
-        <div>
-          <h3 data-fr="Orphelinat &amp; Madrassa Huffaz al-Qur'an" data-en="Orphanage &amp; Huffaz al-Qur'an Madrassa">Orphelinat &amp; Madrassa Huffaz al-Qur'an</h3>
-          <p data-fr="Un lieu de vie et d'éducation coranique pour 60 enfants orphelins qui mémoriseront le Livre d'Allah." data-en="A home and Qur'anic education centre for 60 orphans who will memorise the Book of Allah.">Un lieu de vie et d'éducation coranique pour 60 enfants orphelins qui mémoriseront le Livre d'Allah.</p>
-          <p class="amt">12 000 €<small data-fr="budget alloué" data-en="allocated budget">budget alloué</small></p>
-        </div>
-      </li>
-      <li style="--c:#2C7A5B;">
-        <span class="swatch" aria-hidden="true"></span>
-        <div>
-          <h3 data-fr="Mosquée &amp; puits du village" data-en="Village mosque &amp; water well">Mosquée &amp; puits du village</h3>
-          <p data-fr="Une mosquée de 160 à 200 places, équipée de matériel neuf, avec un puits pour les ablutions et l'usage quotidien." data-en="A mosque with 160 to 200 places, fitted with new equipment, plus a well for ablutions and daily use.">Une mosquée de 160 à 200 places, équipée de matériel neuf, avec un puits pour les ablutions et l'usage quotidien.</p>
-          <p class="amt">11 150 €<small data-fr="budget alloué" data-en="allocated budget">budget alloué</small></p>
-        </div>
-      </li>
-      <li style="--c:#B98A3E;">
-        <span class="swatch" aria-hidden="true"></span>
-        <div>
-          <h3 data-fr="Pack hygiène &amp; confort" data-en="Hygiene &amp; comfort pack">Pack hygiène &amp; confort</h3>
-          <p data-fr="Matelas, oreiller, draps et produits d'hygiène pour chacun des 60 enfants — 35€ par enfant." data-en="Mattress, pillow, sheets and hygiene products for each of the 60 children — €35 per child.">Matelas, oreiller, draps et produits d'hygiène pour chacun des 60 enfants — 35€ par enfant.</p>
-          <p class="amt">2 100 €<small data-fr="budget alloué" data-en="allocated budget">budget alloué</small></p>
-        </div>
-      </li>
-    </ul>
-
-    <div class="budget-total">
-      <div>
-        <h3 data-fr="Total du projet" data-en="Total project cost">Total du projet</h3>
-        <p data-fr="Construction en 2 à 3 mois. Photos et vidéos de l'avancement envoyées régulièrement, jusqu'à l'inauguration." data-en="Construction takes 2 to 3 months. Photos and videos of progress sent regularly, until the inauguration.">Construction en 2 à 3 mois. Photos et vidéos de l'avancement envoyées régulièrement, jusqu'à l'inauguration.</p>
+    <div data-reveal style="--d:120ms">
+      <div class="ledger-total"><span data-fr="Budget total du projet" data-en="Total project budget">Budget total du projet</span><b class="num">25 250 €</b></div>
+      <div class="budget-bar" role="img" aria-label="Répartition du budget : orphelinat 12 000 €, mosquée et puits 11 150 €, pack hygiène 2 100 €." data-aria-fr="Répartition du budget : orphelinat 12 000 €, mosquée et puits 11 150 €, pack hygiène 2 100 €." data-aria-en="Budget split: orphanage €12,000, mosque and well €11,150, hygiene pack €2,100.">
+        <span style="--w:47.5%; --c:#11392E;"></span>
+        <span style="--w:44.2%; --c:#6F9483;"></span>
+        <span style="--w:8.3%; --c:#AE8B53;"></span>
       </div>
-      <p class="amt">25 250 €<small data-fr="objectif global" data-en="total goal">objectif global</small></p>
+      <div class="budget-scale num" aria-hidden="true"><span>0 €</span><span>25 250 €</span></div>
+
+      <ul class="ledger">
+        <li style="--c:#11392E;">
+          <span class="swatch" aria-hidden="true"></span>
+          <div>
+            <h3 data-fr="Orphelinat &amp; Madrassa Huffaz al-Qur'an" data-en="Orphanage &amp; Huffaz al-Qur'an Madrassa">Orphelinat &amp; Madrassa Huffaz al-Qur'an</h3>
+            <p data-fr="Un lieu de vie et d'éducation coranique pour 60 enfants orphelins qui mémoriseront le Livre d'Allah." data-en="A home and Qur'anic education centre for 60 orphans who will memorise the Book of Allah.">Un lieu de vie et d'éducation coranique pour 60 enfants orphelins qui mémoriseront le Livre d'Allah.</p>
+          </div>
+          <p class="amt num">12 000 €<small data-fr="47,5 % du budget" data-en="47.5% of budget">47,5 % du budget</small></p>
+        </li>
+        <li style="--c:#6F9483;">
+          <span class="swatch" aria-hidden="true"></span>
+          <div>
+            <h3 data-fr="Mosquée &amp; puits du village" data-en="Village mosque &amp; water well">Mosquée &amp; puits du village</h3>
+            <p data-fr="Une mosquée de 160 à 200 places, équipée de matériel neuf, avec un puits pour les ablutions et l'usage quotidien." data-en="A mosque with 160 to 200 places, fitted with new equipment, plus a well for ablutions and daily use.">Une mosquée de 160 à 200 places, équipée de matériel neuf, avec un puits pour les ablutions et l'usage quotidien.</p>
+          </div>
+          <p class="amt num">11 150 €<small data-fr="44,2 % du budget" data-en="44.2% of budget">44,2 % du budget</small></p>
+        </li>
+        <li style="--c:#AE8B53;">
+          <span class="swatch" aria-hidden="true"></span>
+          <div>
+            <h3 data-fr="Pack hygiène &amp; confort" data-en="Hygiene &amp; comfort pack">Pack hygiène &amp; confort</h3>
+            <p data-fr="Matelas, oreiller, draps et produits d'hygiène pour chacun des 60 enfants, soit 35 € par enfant." data-en="Mattress, pillow, sheets and hygiene products for each of the 60 children, or €35 per child.">Matelas, oreiller, draps et produits d'hygiène pour chacun des 60 enfants, soit 35 € par enfant.</p>
+          </div>
+          <p class="amt num">2 100 €<small data-fr="8,3 % du budget" data-en="8.3% of budget">8,3 % du budget</small></p>
+        </li>
+      </ul>
+      <p class="ledger-note"><svg aria-hidden="true"><use href="#i-clock"/></svg><span data-fr="Construction en 2 à 3 mois. Photos et vidéos de l'avancement envoyées régulièrement, jusqu'à l'inauguration." data-en="Construction takes 2 to 3 months. Photos and videos of progress sent regularly, until the inauguration.">Construction en 2 à 3 mois. Photos et vidéos de l'avancement envoyées régulièrement, jusqu'à l'inauguration.</span></p>
     </div>
   </div>
 </section>
 
 <!-- ============ PREUVES TERRAIN ============ -->
-<section class="section section-white" aria-labelledby="preuves-title">
+<section class="section card-bg" id="terrain" aria-labelledby="preuves-title">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="sec-kicker" data-fr="Preuves terrain, ONG El Habib" data-en="Field evidence, NGO El Habib">Preuves terrain, ONG El Habib</p>
-      <h2 class="sec-title" id="preuves-title" data-fr="Ce que notre collaboration avec l'ONG El Habib a déjà rendu possible" data-en="What our partnership with NGO El Habib has already achieved">Ce que notre collaboration avec l'ONG El Habib a déjà rendu possible</h2>
-      <p class="sec-lead" data-fr="Ces réalisations sont le fruit du travail de terrain de l'ONG El Habib, notre partenaire pour le projet Bangladesh. Voici un aperçu de précédentes mosquées achevées et inaugurées par leurs équipes — la preuve qu'une sadaqa jariya peut prendre forme, brique après brique." data-en="These achievements are the result of NGO El Habib's fieldwork, our partner for the Bangladesh project. Here is a glimpse of previous mosques completed and inaugurated by their teams — proof that a sadaqa jariyah can take shape, brick by brick.">Ces réalisations sont le fruit du travail de terrain de l'ONG El Habib, notre partenaire pour le projet Bangladesh. Voici un aperçu de précédentes mosquées achevées et inaugurées par leurs équipes — la preuve qu'une sadaqa jariya peut prendre forme, brique après brique.</p>
+    <div class="terrain-head" data-reveal>
+      <div>
+        <span class="kicker" data-fr="Preuves terrain, ONG El Habib" data-en="Field evidence, NGO El Habib">Preuves terrain, ONG El Habib</span>
+        <h2 class="h2" id="preuves-title" data-fr="Ce que l'ONG El Habib a déjà construit" data-en="What NGO El Habib has already built">Ce que l'ONG El Habib a déjà construit</h2>
+      </div>
+      <p class="lead" data-fr="Ces réalisations sont le fruit du travail de terrain de l'ONG El Habib, notre partenaire pour le projet Bangladesh : des mosquées achevées et inaugurées par leurs équipes, la preuve qu'une sadaqa jariya peut prendre forme, brique après brique." data-en="These achievements are the result of NGO El Habib's fieldwork, our partner for the Bangladesh project: mosques completed and inaugurated by their teams, proof that a sadaqa jariyah can take shape, brick by brick.">Ces réalisations sont le fruit du travail de terrain de l'ONG El Habib, notre partenaire pour le projet Bangladesh : des mosquées achevées et inaugurées par leurs équipes, la preuve qu'une sadaqa jariya peut prendre forme, brique après brique.</p>
     </div>
-    <div class="proof-grid">
-      <figure class="proof">
-        <img src="/img/mosquee-priere.jpg" width="900" height="675" loading="lazy" decoding="async" alt="Communauté entière réunie en prière devant une mosquée nouvellement construite">
-        <figcaption><b data-fr="Première prière collective" data-en="First collective prayer">Première prière collective</b><span data-fr="Une mosquée achevée par l'ONG El Habib, déjà au service de tout un village" data-en="A mosque completed by NGO El Habib, already serving an entire village">Une mosquée achevée par l'ONG El Habib, déjà au service de tout un village</span></figcaption>
-      </figure>
-      <figure class="proof">
-        <img src="/img/mosquee-inauguration.jpg" width="900" height="675" loading="lazy" decoding="async" alt="Vue aérienne d'une mosquée terminée et inaugurée avec la communauté">
+    <div class="photo-essay">
+      <figure class="shot wide" data-reveal>
+        <img src="/img/mosquee-inauguration.jpg" width="900" height="675" loading="lazy" decoding="async"
+             alt="Vue aérienne d'une mosquée terminée et inaugurée avec la communauté"
+             data-alt-fr="Vue aérienne d'une mosquée terminée et inaugurée avec la communauté"
+             data-alt-en="Aerial view of a completed mosque inaugurated with the community">
         <figcaption><b data-fr="Inauguration d'une mosquée" data-en="Mosque inauguration">Inauguration d'une mosquée</b><span data-fr="Un précédent projet mené à terme par l'ONG El Habib" data-en="A previous project completed by NGO El Habib">Un précédent projet mené à terme par l'ONG El Habib</span></figcaption>
       </figure>
+      <figure class="shot tall" data-reveal style="--d:120ms">
+        <img src="/img/mosquee-priere.jpg" width="900" height="675" loading="lazy" decoding="async"
+             alt="Communauté entière réunie en prière devant une mosquée nouvellement construite"
+             data-alt-fr="Communauté entière réunie en prière devant une mosquée nouvellement construite"
+             data-alt-en="An entire community gathered in prayer in front of a newly built mosque">
+        <figcaption><b data-fr="Première prière collective" data-en="First collective prayer">Première prière collective</b><span data-fr="Une mosquée achevée par l'ONG El Habib, déjà au service de tout un village" data-en="A mosque completed by NGO El Habib, already serving an entire village">Une mosquée achevée par l'ONG El Habib, déjà au service de tout un village</span></figcaption>
+      </figure>
     </div>
   </div>
 </section>
 
-<!-- ============ HADITH ============ -->
-<section class="verse" aria-label="Hadith">
+<!-- ============ HADITH ET RÉCOMPENSES ============ -->
+<section class="verse" aria-labelledby="recompenses-title">
   <div class="wrap">
-    <p class="arabic" lang="ar" dir="rtl">مَنْ سَنَّ فِي الْإِسْلَامِ سُنَّةً حَسَنَةً فَلَهُ أَجْرُهَا وَأَجْرُ مَنْ عَمِلَ بِهَا بَعْدَهُ مِنْ غَيْرِ أَنْ يَنْقُصَ مِنْ أُجُورِهِمْ شَيْءٌ</p>
-    <p class="trans" data-fr="« Celui qui initie une bonne pratique en Islam aura sa récompense et la récompense de tous ceux qui la pratiquent après lui — sans que cela ne diminue quoi que ce soit de leurs récompenses. »" data-en="&quot;Whoever introduces a good practice in Islam will have its reward and the reward of all those who practise it after him — without that diminishing their rewards in any way.&quot;">« Celui qui initie une bonne pratique en Islam aura sa récompense et la récompense de tous ceux qui la pratiquent après lui — sans que cela ne diminue quoi que ce soit de leurs récompenses. »</p>
-    <p class="ref" data-fr="Hadith authentique — Sahih Muslim n° 1017" data-en="Authentic Hadith — Sahih Muslim no. 1017">Hadith authentique — Sahih Muslim n° 1017</p>
+    <div data-reveal>
+      <p class="arabic" lang="ar" dir="rtl">مَنْ سَنَّ فِي الْإِسْلَامِ سُنَّةً حَسَنَةً فَلَهُ أَجْرُهَا وَأَجْرُ مَنْ عَمِلَ بِهَا بَعْدَهُ مِنْ غَيْرِ أَنْ يَنْقُصَ مِنْ أُجُورِهِمْ شَيْءٌ</p>
+      <p class="trans" data-fr="« Celui qui initie une bonne pratique en Islam aura sa récompense et la récompense de tous ceux qui la pratiquent après lui, sans que cela ne diminue quoi que ce soit de leurs récompenses. »" data-en="“Whoever introduces a good practice in Islam will have its reward and the reward of all those who practise it after him, without that diminishing their rewards in any way.”">« Celui qui initie une bonne pratique en Islam aura sa récompense et la récompense de tous ceux qui la pratiquent après lui, sans que cela ne diminue quoi que ce soit de leurs récompenses. »</p>
+      <p class="ref" data-fr="Hadith authentique, Sahih Muslim n° 1017" data-en="Authentic hadith, Sahih Muslim no. 1017">Hadith authentique, Sahih Muslim n° 1017</p>
+    </div>
+
+    <div class="rewards" data-reveal>
+      <div>
+        <span class="kicker" data-fr="Un don, plusieurs récompenses" data-en="One donation, multiple rewards">Un don, plusieurs récompenses</span>
+        <h2 class="h2" id="recompenses-title" data-fr="Pourquoi ce projet cumule des récompenses rares" data-en="Why this project combines rare rewards">Pourquoi ce projet cumule des récompenses rares</h2>
+      </div>
+      <ul class="rewards-list">
+        <li><b data-fr="La Sadaqa Jariya" data-en="Sadaqa Jariyah">La Sadaqa Jariya</b><span data-fr="Une récompense qui continue après la mort" data-en="A reward that continues after death">Une récompense qui continue après la mort</span></li>
+        <li><b data-fr="Le soutien aux orphelins" data-en="Supporting orphans">Le soutien aux orphelins</b><span data-fr="Un foyer et une éducation pour 60 enfants" data-en="A home and an education for 60 children">Un foyer et une éducation pour 60 enfants</span></li>
+        <li><b data-fr="La construction d'une mosquée et d'un puits" data-en="Building a mosque and a well">La construction d'une mosquée et d'un puits</b><span data-fr="Un lieu de prière et de l'eau pour tout un village" data-en="A place of prayer and water for a whole village">Un lieu de prière et de l'eau pour tout un village</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<!-- ============ RÉCOMPENSES & ENGAGEMENTS ============ -->
-<section class="section section-white" aria-labelledby="recompenses-title">
+<!-- ============ COMMENT ÇA MARCHE + ENGAGEMENTS ============ -->
+<section class="section card-bg" aria-labelledby="etapes-title">
   <div class="wrap">
-    <div class="sec-head">
-      <p class="sec-kicker" data-fr="Un don, plusieurs récompenses" data-en="One donation, multiple rewards">Un don, plusieurs récompenses</p>
-      <h2 class="sec-title" id="recompenses-title" data-fr="Pourquoi ce projet cumule des récompenses rares" data-en="Why this project combines rare rewards">Pourquoi ce projet cumule des récompenses rares</h2>
-      <p class="sec-lead" data-fr="C'est cumuler la récompense de la <b>Sadaqa Jariya</b> qui continue après la mort, la récompense d'avoir <b>soutenu des orphelins</b> et la récompense d'avoir <b>construit une mosquée et un puits</b>." data-en="It means combining the reward of <b>Sadaqa Jariyah</b> which continues after death, the reward of <b>supporting orphans</b> and the reward of <b>building a mosque and a well</b>.">C'est cumuler la récompense de la <b>Sadaqa Jariya</b> qui continue après la mort, la récompense d'avoir <b>soutenu des orphelins</b> et la récompense d'avoir <b>construit une mosquée et un puits</b>.</p>
+    <div class="suivi-head" data-reveal>
+      <span class="kicker" data-fr="Comment ça marche" data-en="How it works">Comment ça marche</span>
+      <h2 class="h2" id="etapes-title" data-fr="De votre don à la première pierre" data-en="From your donation to the first stone">De votre don à la première pierre</h2>
+      <p class="lead" data-fr="Un circuit simple, traçable, et conforme à la réglementation française sur les associations." data-en="A simple, traceable process, fully compliant with French non-profit regulations.">Un circuit simple, traçable, et conforme à la réglementation française sur les associations.</p>
     </div>
-    <ul class="commit-list">
-      <li>
-        <span class="commit-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
-        <div>
-          <h3 data-fr="Photos &amp; vidéos de l'avancement" data-en="Photos &amp; progress videos">Photos &amp; vidéos de l'avancement</h3>
-          <p data-fr="Nous nous engageons à vous envoyer des photos et vidéos de l'avancement du chantier tout au long de la construction." data-en="We commit to sending you photos and videos of the construction progress throughout the project.">Nous nous engageons à vous envoyer des photos et vidéos de l'avancement du chantier tout au long de la construction.</p>
-        </div>
-      </li>
-      <li>
-        <span class="commit-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4.5V3h6v1.5M8.5 11l2 2 4-4M8.5 17h7"/></svg></span>
-        <div>
-          <h3 data-fr="Chaque étape annoncée" data-en="Every stage announced">Chaque étape annoncée</h3>
-          <p data-fr="Vous serez informé de chaque étape de la construction — fondations, murs, toiture, finitions — au fur et à mesure." data-en="You will be informed of every construction stage — foundations, walls, roofing, finishing — as it happens.">Vous serez informé de chaque étape de la construction — fondations, murs, toiture, finitions — au fur et à mesure.</p>
-        </div>
-      </li>
-      <li>
-        <span class="commit-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10.5l5-3v9l-5-3z"/></svg></span>
-        <div>
-          <h3 data-fr="Inauguration en direct" data-en="Live inauguration">Inauguration en direct</h3>
-          <p data-fr="Vous serez invité à l'inauguration pour accueillir les enfants par vidéo, puis recevrez un rapport complet à la fin du projet." data-en="You will be invited to the inauguration to welcome the children by video, and will receive a full report at the end of the project.">Vous serez invité à l'inauguration pour accueillir les enfants par vidéo, puis recevrez un rapport complet à la fin du projet.</p>
-        </div>
-      </li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============ COMMENT ÇA MARCHE ============ -->
-<section class="section" aria-labelledby="etapes-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="sec-kicker" data-fr="Comment ça marche" data-en="How it works">Comment ça marche</p>
-      <h2 class="sec-title" id="etapes-title" data-fr="De votre don à la première pierre" data-en="From your donation to the first stone">De votre don à la première pierre</h2>
-      <p class="sec-lead" data-fr="Un circuit simple, traçable, et conforme à la réglementation française sur les associations." data-en="A simple, traceable process, fully compliant with French non-profit regulations.">Un circuit simple, traçable, et conforme à la réglementation française sur les associations.</p>
-    </div>
-    <ol class="steps">
+    <ol class="steps" data-reveal>
       <li>
         <h3 data-fr="Vous donnez" data-en="You donate">Vous donnez</h3>
         <p data-fr="En ligne par carte bancaire, sur notre cagnotte officielle CotizUp, quel que soit le montant." data-en="Online by card, on our official CotizUp fundraising page, whatever the amount.">En ligne par carte bancaire, sur notre cagnotte officielle CotizUp, quel que soit le montant.</p>
       </li>
       <li>
         <h3 data-fr="Nous collectons" data-en="We collect">Nous collectons</h3>
-        <p data-fr="Les fonds arrivent sur le compte officiel de Suleyman &amp; Kabir Humanity, SIREN 106087125." data-en="Funds arrive in the official account of Suleyman &amp; Kabir Humanity, SIREN 106087125.">Les fonds arrivent sur le compte officiel de Suleyman &amp; Kabir Humanity, SIREN 106087125.</p>
+        <p data-fr="Les fonds arrivent sur le compte officiel de Suleyman &amp; Kabir Humanity, SIREN 106 087 125." data-en="Funds arrive in the official account of Suleyman &amp; Kabir Humanity, SIREN 106 087 125.">Les fonds arrivent sur le compte officiel de Suleyman &amp; Kabir Humanity, SIREN 106 087 125.</p>
       </li>
       <li>
         <h3 data-fr="Nous transférons" data-en="We transfer">Nous transférons</h3>
@@ -766,139 +844,152 @@
         <p data-fr="Construction sur place, avec photos, justificatifs et rapports d'avancement partagés avec vous." data-en="Construction on site, with photos, receipts and progress reports shared with you.">Construction sur place, avec photos, justificatifs et rapports d'avancement partagés avec vous.</p>
       </li>
     </ol>
+
+    <div class="commit" data-reveal>
+      <h3 class="commit-title" data-fr="Nos engagements envers vous" data-en="Our commitments to you">Nos engagements envers vous</h3>
+      <ul class="commit-list">
+        <li>
+          <h3><svg aria-hidden="true"><use href="#i-camera"/></svg><span data-fr="Photos &amp; vidéos de l'avancement" data-en="Photos &amp; progress videos">Photos &amp; vidéos de l'avancement</span></h3>
+          <p data-fr="Nous nous engageons à vous envoyer des photos et vidéos de l'avancement du chantier tout au long de la construction." data-en="We commit to sending you photos and videos of the construction progress throughout the project.">Nous nous engageons à vous envoyer des photos et vidéos de l'avancement du chantier tout au long de la construction.</p>
+        </li>
+        <li>
+          <h3><svg aria-hidden="true"><use href="#i-check"/></svg><span data-fr="Chaque étape annoncée" data-en="Every stage announced">Chaque étape annoncée</span></h3>
+          <p data-fr="Vous serez informé de chaque étape de la construction, des fondations aux finitions, au fur et à mesure." data-en="You will be informed of every construction stage, from foundations to finishing, as it happens.">Vous serez informé de chaque étape de la construction, des fondations aux finitions, au fur et à mesure.</p>
+        </li>
+        <li>
+          <h3><svg aria-hidden="true"><use href="#i-video"/></svg><span data-fr="Inauguration en direct" data-en="Live inauguration">Inauguration en direct</span></h3>
+          <p data-fr="Vous serez invité à l'inauguration pour accueillir les enfants par vidéo, puis recevrez un rapport complet à la fin du projet." data-en="You will be invited to the inauguration to welcome the children by video, and will receive a full report at the end of the project.">Vous serez invité à l'inauguration pour accueillir les enfants par vidéo, puis recevrez un rapport complet à la fin du projet.</p>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <!-- ============ TRANSPARENCE ============ -->
-<section class="section section-white" id="transparence" aria-labelledby="transparence-title">
+<section class="section" id="transparence" aria-labelledby="transparence-title">
   <div class="wrap trans-grid">
-    <div>
-      <p class="sec-kicker" data-fr="Transparence totale" data-en="Full transparency">Transparence totale</p>
-      <h2 class="sec-title" id="transparence-title" data-fr="Votre confiance se vérifie, elle ne se demande pas" data-en="Trust is something you can verify, not just ask for">Votre confiance se vérifie, elle ne se demande pas</h2>
-      <p class="sec-lead" data-fr="Chaque virement vers l'ONG El Habib est documenté. Aucune commission n'est prélevée sur vos dons de sadaqa jariya — seuls les frais de fonctionnement strictement nécessaires sont couverts séparément." data-en="Every transfer to NGO El Habib is documented. No commission is taken from your sadaqa jariyah donations — only strictly necessary operating costs are covered separately.">Chaque virement vers l'ONG El Habib est documenté. Aucune commission n'est prélevée sur vos dons de sadaqa jariya — seuls les frais de fonctionnement strictement nécessaires sont couverts séparément.</p>
-      <ul class="doc-list">
-        <li><span class="doc-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></span><div><b data-fr="Récépissé préfectoral" data-en="Prefectural receipt">Récépissé préfectoral</b><span data-fr="Sous-préfecture de Mantes-la-Jolie — 3 juin 2026" data-en="Sub-prefecture of Mantes-la-Jolie — 3 June 2026">Sous-préfecture de Mantes-la-Jolie — 3 juin 2026</span></div></li>
-        <li><span class="doc-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l4-4 5 3 5-3 4 4-9 8z"/><path d="M12 10v9"/></svg></span><div><b data-fr="Convention ONG El Habib" data-en="NGO El Habib agreement">Convention ONG El Habib</b><span data-fr="Modalités de transfert et reporting encadrées" data-en="Transfer and reporting terms formally defined">Modalités de transfert et reporting encadrées</span></div></li>
-        <li><span class="doc-ic" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span><div><b data-fr="Rapport d'avancement" data-en="Progress report">Rapport d'avancement</b><span data-fr="Publié à chaque étape clé du chantier" data-en="Published at every key construction milestone">Publié à chaque étape clé du chantier</span></div></li>
+    <div data-reveal>
+      <span class="kicker" data-fr="Transparence" data-en="Transparency">Transparence</span>
+      <h2 class="h2" id="transparence-title" data-fr="Votre confiance se vérifie, elle ne se demande pas" data-en="Trust is something you can verify, not just ask for">Votre confiance se vérifie, elle ne se demande pas</h2>
+      <p class="lead" data-fr="Chaque virement vers l'ONG El Habib est documenté. Aucune commission n'est prélevée sur vos dons de sadaqa jariya, seuls les frais de fonctionnement strictement nécessaires sont couverts séparément." data-en="Every transfer to NGO El Habib is documented. No commission is taken from your sadaqa jariyah donations, only strictly necessary operating costs are covered separately.">Chaque virement vers l'ONG El Habib est documenté. Aucune commission n'est prélevée sur vos dons de sadaqa jariya, seuls les frais de fonctionnement strictement nécessaires sont couverts séparément.</p>
+      <ul class="docs">
+        <li><svg aria-hidden="true"><use href="#i-doc"/></svg><div><b data-fr="Récépissé préfectoral" data-en="Prefectural receipt">Récépissé préfectoral</b><span data-fr="Sous-préfecture de Mantes-la-Jolie, 3 juin 2026" data-en="Sub-prefecture of Mantes-la-Jolie, 3 June 2026">Sous-préfecture de Mantes-la-Jolie, 3 juin 2026</span></div></li>
+        <li><svg aria-hidden="true"><use href="#i-hand"/></svg><div><b data-fr="Convention ONG El Habib" data-en="NGO El Habib agreement">Convention ONG El Habib</b><span data-fr="Modalités de transfert et reporting encadrées" data-en="Transfer and reporting terms formally defined">Modalités de transfert et reporting encadrées</span></div></li>
+        <li><svg aria-hidden="true"><use href="#i-chart"/></svg><div><b data-fr="Rapport d'avancement" data-en="Progress report">Rapport d'avancement</b><span data-fr="Publié à chaque étape clé du chantier" data-en="Published at every key construction milestone">Publié à chaque étape clé du chantier</span></div></li>
       </ul>
     </div>
-    <div class="legal-card">
-      <h3 data-fr="Carte d'identité de l'association" data-en="Association identity card">Carte d'identité de l'association</h3>
+    <div class="fiche" data-reveal style="--d:120ms">
+      <div class="fiche-head">
+        <svg class="logo logo-mark" viewBox="195.6378 283.945 204 267" aria-hidden="true"><use href="#logo-mark" x="195.6378" y="283.945" width="204" height="267"/></svg>
+        <h3><span data-fr="Fiche d'identité de l'association" data-en="Association identity card">Fiche d'identité de l'association</span><small data-fr="Informations publiques et vérifiables" data-en="Public, verifiable information">Informations publiques et vérifiables</small></h3>
+      </div>
       <dl>
-        <div class="legal-row"><dt data-fr="Nom" data-en="Name">Nom</dt><dd>Suleyman &amp; Kabir Humanity</dd></div>
-        <div class="legal-row"><dt data-fr="Statut" data-en="Status">Statut</dt><dd data-fr="Loi 1901" data-en="French non-profit (Law 1901)">Loi 1901</dd></div>
-        <div class="legal-row"><dt>SIREN</dt><dd>106 087 125</dd></div>
-        <div class="legal-row"><dt>RNA</dt><dd>W781010839</dd></div>
-        <div class="legal-row"><dt data-fr="Journal Officiel" data-en="Official Gazette">Journal Officiel</dt><dd data-fr="Annonce n° 2091 — 9 juin 2026" data-en="Notice no. 2091 — 9 June 2026">Annonce n° 2091 — 9 juin 2026</dd></div>
-        <div class="legal-row"><dt data-fr="Pays" data-en="Country">Pays</dt><dd>France</dd></div>
-        <div class="legal-row"><dt data-fr="Partenaire terrain" data-en="Field partner">Partenaire terrain</dt><dd>ONG El Habib</dd></div>
-        <div class="legal-row"><dt data-fr="Président" data-en="President">Président</dt><dd>A. El Ouarz</dd></div>
+        <div class="fiche-row"><dt data-fr="Nom" data-en="Name">Nom</dt><dd>Suleyman &amp; Kabir Humanity</dd></div>
+        <div class="fiche-row"><dt data-fr="Statut" data-en="Status">Statut</dt><dd data-fr="Association loi 1901" data-en="French non-profit (Law 1901)">Association loi 1901</dd></div>
+        <div class="fiche-row"><dt>SIREN</dt><dd class="num">106 087 125</dd></div>
+        <div class="fiche-row"><dt>RNA</dt><dd class="num">W781010839</dd></div>
+        <div class="fiche-row"><dt data-fr="Journal officiel" data-en="Official Gazette">Journal officiel</dt><dd class="num" data-fr="Annonce n° 2091, 9 juin 2026" data-en="Notice no. 2091, 9 June 2026">Annonce n° 2091, 9 juin 2026</dd></div>
+        <div class="fiche-row"><dt data-fr="Pays" data-en="Country">Pays</dt><dd>France</dd></div>
+        <div class="fiche-row"><dt data-fr="Partenaire terrain" data-en="Field partner">Partenaire terrain</dt><dd data-fr="ONG El Habib" data-en="NGO El Habib">ONG El Habib</dd></div>
+        <div class="fiche-row"><dt data-fr="Président" data-en="President">Président</dt><dd>A. El Ouarz</dd></div>
       </dl>
     </div>
   </div>
 </section>
 
 <!-- ============ FAIRE UN DON ============ -->
-<section class="section" id="don" aria-labelledby="don-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="sec-kicker" data-fr="Faire un don" data-en="Make a donation">Faire un don</p>
-      <h2 class="sec-title" id="don-title" data-fr="Chaque montant a un impact concret" data-en="Every amount has a real impact">Chaque montant a un impact concret</h2>
-      <p class="sec-lead" data-fr="Choisissez le montant qui vous parle. 100% est destiné aux trois constructions du projet Bangladesh." data-en="Choose the amount that speaks to you. 100% goes to the three constructions of the Bangladesh project.">Choisissez le montant qui vous parle. 100% est destiné aux trois constructions du projet Bangladesh.</p>
+<section class="don" id="don" aria-labelledby="don-title">
+  <div class="wrap don-grid">
+    <div data-reveal>
+      <span class="kicker" data-fr="Faire un don" data-en="Make a donation">Faire un don</span>
+      <h2 class="h2" id="don-title" data-fr="Chaque montant a un impact concret" data-en="Every amount has a real impact">Chaque montant a un impact concret</h2>
+      <p class="lead" data-fr="Choisissez le montant qui vous parle. 100 % est destiné aux trois constructions du projet Bangladesh." data-en="Choose the amount that speaks to you. 100% goes to the three constructions of the Bangladesh project.">Choisissez le montant qui vous parle. 100 % est destiné aux trois constructions du projet Bangladesh.</p>
     </div>
 
     <!-- Paliers 5 €, 20 € et 50 € : masqués comme sur le site actuel (en attente de décision). -->
     <div class="tier" hidden>
       <div class="amount">5 €</div>
       <div class="impact" data-i18n-template data-id-n="js-count-5-tier" data-fr="Le don qui, multiplié par {n} personnes, finance tout le projet." data-en="The donation that, multiplied by {n} people, funds the whole project.">Le don qui, multiplié par <b id="js-count-5-tier">3 152</b> personnes, finance tout le projet.</div>
-      <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" data-fr="Je donne 5€" data-en="I give €5">Je donne 5€</a>
+      <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" data-fr="Je donne 5 €" data-en="I give €5">Je donne 5 €</a>
     </div>
     <div class="tier" hidden>
       <div class="amount">20 €</div>
       <div class="impact" data-fr="De quoi financer des matériaux de construction pour le puits." data-en="Enough to fund construction materials for the well.">De quoi financer des matériaux de construction pour le puits.</div>
-      <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" data-fr="Je donne 20€" data-en="I give €20">Je donne 20€</a>
+      <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" data-fr="Je donne 20 €" data-en="I give €20">Je donne 20 €</a>
     </div>
     <div class="tier" hidden>
       <div class="amount">50 €</div>
       <div class="impact" data-fr="Une contribution significative à l'orphelinat des 60 enfants." data-en="A meaningful contribution to the orphanage for 60 children.">Une contribution significative à l'orphelinat des 60 enfants.</div>
-      <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" data-fr="Je donne 50€" data-en="I give €50">Je donne 50€</a>
+      <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" data-fr="Je donne 50 €" data-en="I give €50">Je donne 50 €</a>
     </div>
 
-    <div class="don-panel">
-      <div class="amount" data-fr="Libre" data-en="Custom">Libre</div>
+    <div class="don-card" data-reveal style="--d:120ms">
+      <span class="label" data-fr="Don en ligne" data-en="Online donation">Don en ligne</span>
+      <p class="amount" data-fr="Montant libre" data-en="Any amount">Montant libre</p>
       <p class="impact" data-fr="Choisissez votre propre montant, chaque euro compte." data-en="Choose your own amount, every euro counts.">Choisissez votre propre montant, chaque euro compte.</p>
-      <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn" data-fr="Montant libre" data-en="Custom amount">Montant libre</a>
-      <p class="pay-note" data-fr="Paiement sécurisé par carte bancaire sur notre cagnotte officielle CotizUp." data-en="Secure card payment on our official CotizUp fundraising page.">Paiement sécurisé par carte bancaire sur notre cagnotte officielle CotizUp.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ APPEL FINAL ============ -->
-<section class="section" style="padding-top:0;" aria-labelledby="final-title">
-  <div class="wrap">
-    <div class="cta-final">
-      <p class="arabic" lang="ar" dir="rtl">اللَّهُمَّ تَقَبَّلْ مِنَّا</p>
-      <h2 id="final-title" data-fr="Chaque euro donné construit une mosquée, éduque un orphelin, creuse un puits." data-en="Every euro donated builds a mosque, educates an orphan, digs a well.">Chaque euro donné construit une mosquée, éduque un orphelin, creuse un puits.</h2>
-      <p data-fr="Que Allah accepte de chaque donateur et en fasse une lumière pour lui le Jour du Jugement. Amine.<br><br>En collaboration avec ONG El Habib." data-en="May Allah accept from every donor and make it a light for them on the Day of Judgement. Ameen.<br><br>In partnership with NGO El Habib.">Que Allah accepte de chaque donateur et en fasse une lumière pour lui le Jour du Jugement. Amine.<br><br>En collaboration avec ONG El Habib.</p>
-      <div class="ctas">
-        <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn btn-or" data-fr="Faire un don aujourd'hui" data-en="Donate today">Faire un don aujourd'hui</a>
-        <a href="#contact" class="btn btn-light" data-fr="Nous contacter" data-en="Contact us">Nous contacter</a>
-      </div>
+      <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn"><span data-fr="Faire un don" data-en="Donate">Faire un don</span><svg aria-hidden="true"><use href="#i-out"/></svg></a>
+      <p class="pay-note"><svg aria-hidden="true"><use href="#i-lock"/></svg><span data-fr="Paiement sécurisé par carte bancaire sur notre cagnotte officielle CotizUp, qui s'ouvre dans un nouvel onglet." data-en="Secure card payment on our official CotizUp fundraising page, which opens in a new tab.">Paiement sécurisé par carte bancaire sur notre cagnotte officielle CotizUp, qui s'ouvre dans un nouvel onglet.</span></p>
     </div>
   </div>
 </section>
 
 </main>
 
-<!-- ============ PIED DE PAGE ============ -->
-<footer id="contact">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <div class="foot-brand">
-          <svg viewBox="0 0 28 34" aria-hidden="true">
-            <path d="M2 33V14C2 7.4 7.4 2 14 2s12 5.4 12 12v19" fill="none" stroke="#F5F6F1" stroke-width="2.4"/>
-            <rect x="7" y="27" width="6" height="3.4" rx=".6" fill="#D8B46E"/>
-            <rect x="15" y="27" width="6" height="3.4" rx=".6" fill="#D8B46E"/>
-            <rect x="11" y="22.4" width="6" height="3.4" rx=".6" fill="#D8B46E"/>
-          </svg>
-          Suleyman &amp; Kabir Humanity
+<!-- ============ CLÔTURE + PIED DE PAGE ============ -->
+<div class="night on-night">
+  <section class="closing" aria-labelledby="final-title">
+    <div class="wrap" data-reveal>
+      <p class="arabic" lang="ar" dir="rtl">اللَّهُمَّ تَقَبَّلْ مِنَّا</p>
+      <h2 id="final-title" data-fr="Chaque euro donné construit une mosquée, éduque un orphelin, creuse un puits" data-en="Every euro donated builds a mosque, educates an orphan, digs a well">Chaque euro donné construit une mosquée, éduque un orphelin, creuse un puits</h2>
+      <p data-fr="Que Allah accepte de chaque donateur et en fasse une lumière pour lui le Jour du Jugement. Amine. En collaboration avec l'ONG El Habib." data-en="May Allah accept from every donor and make it a light for them on the Day of Judgement. Ameen. In partnership with NGO El Habib.">Que Allah accepte de chaque donateur et en fasse une lumière pour lui le Jour du Jugement. Amine. En collaboration avec l'ONG El Habib.</p>
+      <div class="ctas">
+        <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn btn-gold" data-fr="Faire un don aujourd'hui" data-en="Donate today">Faire un don aujourd'hui</a>
+        <a href="#contact" class="btn btn-night" data-fr="Nous contacter" data-en="Contact us">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand"><svg class="logo logo-full" viewBox="95.8 275.945 403.68 374" role="img" aria-label="Suleyman &amp; Kabir Humanity"><use href="#logo-full" x="95.8" y="275.945" width="403.68" height="374"/></svg></div>
+          <p style="max-width:300px;" data-fr="Association humanitaire loi 1901, en collaboration avec l'ONG El Habib, au service des populations vulnérables à travers le monde." data-en="French humanitarian non-profit, in partnership with NGO El Habib, serving vulnerable populations around the world.">Association humanitaire loi 1901, en collaboration avec l'ONG El Habib, au service des populations vulnérables à travers le monde.</p>
         </div>
-        <p style="max-width:300px;" data-fr="Association humanitaire loi 1901, en collaboration avec l'ONG El Habib, au service des populations vulnérables à travers le monde." data-en="French humanitarian non-profit, in partnership with NGO El Habib, serving vulnerable populations around the world.">Association humanitaire loi 1901, en collaboration avec l'ONG El Habib, au service des populations vulnérables à travers le monde.</p>
+        <div>
+          <h2 data-fr="Association" data-en="Association">Association</h2>
+          <a href="#projet" data-fr="Le projet Bangladesh" data-en="The Bangladesh project">Le projet Bangladesh</a>
+          <a href="#transparence" data-fr="Transparence" data-en="Transparency">Transparence</a>
+          <a href="#don" data-fr="Faire un don" data-en="Donate">Faire un don</a>
+        </div>
+        <div>
+          <h2 data-fr="Informations légales" data-en="Legal information">Informations légales</h2>
+          <p class="num">SIREN 106 087 125</p>
+          <p class="num">RNA W781010839</p>
+          <p data-fr="Publiée au JOAFE, annonce n° 2091<br>Association loi 1901, France" data-en="Published in the Official Gazette, notice no. 2091<br>French non-profit association (Law 1901)">Publiée au JOAFE, annonce n° 2091<br>Association loi 1901, France</p>
+          <a href="/mentions-legales.html" data-fr="Mentions légales et confidentialité" data-en="Legal notice and privacy">Mentions légales et confidentialité</a>
+        </div>
+        <div>
+          <h2 data-fr="Contact" data-en="Contact">Contact</h2>
+          <a class="mail" href="mailto:suleyman.kabir.humanity@gmail.com">suleyman.kabir.humanity<wbr>@gmail.com</a>
+          <p data-fr="Lun – Ven, 9 h – 18 h" data-en="Mon – Fri, 9am – 6pm">Lun – Ven, 9 h – 18 h</p>
+        </div>
       </div>
-      <div>
-        <h2 data-fr="Association" data-en="Association">Association</h2>
-        <a href="#projet" data-fr="Le projet Bangladesh" data-en="The Bangladesh project">Le projet Bangladesh</a>
-        <a href="#transparence" data-fr="Transparence" data-en="Transparency">Transparence</a>
-        <a href="#don" data-fr="Faire un don" data-en="Donate">Faire un don</a>
-      </div>
-      <div>
-        <h2 data-fr="Informations légales" data-en="Legal information">Informations légales</h2>
-        <p>SIREN 106087125</p>
-        <p>RNA W781010839</p>
-        <p data-fr="Publiée au JOAFE — Annonce n° 2091<br>Association loi 1901, France" data-en="Published in the Official Gazette — Notice no. 2091<br>French non-profit association (Law 1901)">Publiée au JOAFE — Annonce n° 2091<br>Association loi 1901, France</p>
-        <a href="/mentions-legales.html" data-fr="Mentions légales et confidentialité" data-en="Legal notice and privacy">Mentions légales et confidentialité</a>
-      </div>
-      <div>
-        <h2 data-fr="Contact" data-en="Contact">Contact</h2>
-        <a href="mailto:suleyman.kabir.humanity@gmail.com">suleyman.kabir.humanity@gmail.com</a>
-        <p data-fr="Lun – Ven, 9h – 18h" data-en="Mon – Fri, 9am – 6pm">Lun – Ven, 9h – 18h</p>
+      <div class="foot-bottom">
+        <span data-fr="© 2026 Suleyman &amp; Kabir Humanity. Tous droits réservés." data-en="© 2026 Suleyman &amp; Kabir Humanity. All rights reserved.">© 2026 Suleyman &amp; Kabir Humanity. Tous droits réservés.</span>
+        <span data-fr="Qu'Allah accepte de chacun d'entre nous" data-en="May Allah accept from each of us">Qu'Allah accepte de chacun d'entre nous</span>
       </div>
     </div>
-    <div class="foot-bottom">
-      <span data-fr="© 2026 Suleyman &amp; Kabir Humanity. Tous droits réservés." data-en="© 2026 Suleyman &amp; Kabir Humanity. All rights reserved.">© 2026 Suleyman &amp; Kabir Humanity. Tous droits réservés.</span>
-      <span data-fr="Qu'Allah accepte de chacun d'entre nous 🤲" data-en="May Allah accept from each of us 🤲">Qu'Allah accepte de chacun d'entre nous 🤲</span>
-    </div>
-  </div>
-</footer>
+  </footer>
+</div>
 
 <!-- ============ BARRE DE DON MOBILE ============ -->
 <div class="dock" id="dock" inert>
   <div class="dock-info">
-    <p><b id="js-dock-raised">9 494 €</b><span data-fr="collectés sur" data-en="raised of">collectés sur</span> <span class="js-goal">25 250 €</span></p>
+    <p><b class="num" id="js-dock-raised">9 494 €</b><span data-fr="collectés sur" data-en="raised of">collectés sur</span> <span class="js-goal num">25 250 €</span></p>
     <div class="dock-track" aria-hidden="true"><i id="js-dock-fill" style="width:37.6%;"></i></div>
   </div>
-  <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn" data-fr="Faire un don" data-en="Donate">Faire un don</a>
+  <a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener" class="btn btn-gold" data-fr="Faire un don" data-en="Donate">Faire un don</a>
 </div>
 
 <script>
@@ -908,29 +999,34 @@
   // ===== TEXTES GÉNÉRÉS PAR LE SCRIPT, DANS LES DEUX LANGUES =====
   const T = {
     fr: {
+      title: 'Suleyman & Kabir Humanity — Orphelinat, mosquée et puits au Bangladesh',
+      desc: "Suleyman & Kabir Humanity construit, avec l'ONG El Habib, un orphelinat pour 60 enfants, une mosquée et un puits d'eau potable au Bangladesh. Chaque don est tracé.",
       donors: (n) => n + ' donateurs déjà mobilisés',
       copy: 'Copier le lien',
       copied: 'Lien copié',
       copyFail: 'Copie impossible : copiez l’adresse du navigateur',
       releve: (d) => 'Montant relevé sur la cagnotte officielle le ' + d,
       wall: (p, r) => 'Mur de 100 briques : ' + p + ' % financé, il reste ' + r + '.',
-      share: (n, url) => '🤲 ' + n + ' dons de 5€ suffisent pour boucler cette Sadaqa Jariya (orphelinat, mosquée et puits au Bangladesh). Chaque euro compte : ' + url,
+      share: (n, url) => n + ' dons de 5 € suffisent pour boucler cette Sadaqa Jariya (orphelinat, mosquée et puits au Bangladesh). Chaque euro compte : ' + url,
       menuOpen: 'Ouvrir le menu', menuClose: 'Fermer le menu',
     },
     en: {
+      title: 'Suleyman & Kabir Humanity — Orphanage, mosque and well in Bangladesh',
+      desc: 'Suleyman & Kabir Humanity is building, with NGO El Habib, an orphanage for 60 children, a mosque and a water well in Bangladesh. Every donation is tracked.',
       donors: (n) => n + ' donors already on board',
       copy: 'Copy link',
       copied: 'Link copied',
       copyFail: 'Copy failed: copy the address from your browser',
       releve: (d) => 'Amount taken from the official fundraising page on ' + d,
       wall: (p, r) => 'Wall of 100 bricks: ' + p + '% funded, ' + r + ' still needed.',
-      share: (n, url) => '🤲 Just ' + n + ' donations of €5 will complete this Sadaqa Jariyah (orphanage, mosque and well in Bangladesh). Every euro counts: ' + url,
+      share: (n, url) => 'Just ' + n + ' donations of €5 will complete this Sadaqa Jariyah (orphanage, mosque and well in Bangladesh). Every euro counts: ' + url,
       menuOpen: 'Open menu', menuClose: 'Close menu',
     },
   };
 
   let lang = 'fr';
   const calcEl = document.getElementById('donation-calc');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Source unique des chiffres : dernier relevé vérifié.
   // 1) /api/stats (relevé saisi par l'association sur /admin.html)  2) repli : data-* ci-dessus.
@@ -943,7 +1039,7 @@
 
   const locale = () => (lang === 'en' ? 'en-GB' : 'fr-FR');
   const num = (n, d) => n.toLocaleString(locale(), { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 });
-  const money = (n, d) => (lang === 'en' ? '€' + num(n, d) : num(n, d) + ' €');
+  const money = (n, d) => (lang === 'en' ? '€' + num(n, d) : num(n, d) + ' €');
   const longDate = (iso) => (iso.length > 10
     ? new Date(iso).toLocaleString(locale(), { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' })
     : new Date(iso + 'T12:00:00').toLocaleDateString(locale(), { day: 'numeric', month: 'long', year: 'numeric' }));
@@ -954,8 +1050,8 @@
     return { remaining, exact, percent: Math.round(exact), count5: Math.ceil(remaining / 5) };
   }
 
-  // ===== MURS DE BRIQUES =====
-  // Construits du bas vers le haut, en quinconce : chaque rangée = 1 demi-brique décorative + N briques.
+  // ===== BRIQUES =====
+  // Grand mur : construit du bas vers le haut, en quinconce (1 demi-brique décorative + N briques par rangée).
   function buildWall(el, rows, perRow) {
     const cols = perRow * 2 + 1;
     el.style.setProperty('--cols', cols);
@@ -979,8 +1075,19 @@
     }
     el._bricks = bricks;
   }
+  // Rangée simple de l'accueil : 20 briques, chacune vaut 5 % de l'objectif.
+  function buildRow(el, n) {
+    const bricks = [];
+    for (let i = 0; i < n; i++) {
+      const brick = document.createElement('span');
+      brick.className = 'brick';
+      el.appendChild(brick);
+      bricks.push(brick);
+    }
+    el._bricks = bricks;
+  }
 
-  // Briques pleines + brique en cours de pose remplie au prorata (ex. 37,6 % → 37 pleines, la 38e à 60 %).
+  // Briques pleines + brique en cours de pose remplie au prorata.
   function fillWall(el, exactPct) {
     const bricks = el._bricks;
     const units = (exactPct / 100) * bricks.length;
@@ -997,11 +1104,11 @@
     }
   }
 
-  // Animation de pose : une seule fois, brique par brique, quand le mur entre à l'écran.
+  // Pose animée, une seule fois, brique par brique, quand le mur entre à l'écran.
   function layBricks(el, exactPct, done) {
     const bricks = el._bricks;
     const full = Math.floor((exactPct / 100) * bricks.length);
-    const step = 38;
+    const step = 32;
     bricks.forEach((b) => b.classList.remove('on', 'next'));
     bricks.slice(0, full).forEach((b, i) => setTimeout(() => b.classList.add('on'), 120 + i * step));
     setTimeout(() => { fillWall(el, exactPct); if (done) done(); }, 120 + full * step + 450);
@@ -1011,10 +1118,9 @@
   const wallBig = document.getElementById('wall-big');
   const wallFrame = document.getElementById('wall-frame');
   const wallTag = document.getElementById('wall-tag');
-  buildWall(wallMini, 5, 20);
+  buildRow(wallMini, 20);
   buildWall(wallBig, 10, 10);
   let bigRevealed = false;
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function placeTag() {
     const next = wallBig.querySelector('.brick.next');
@@ -1044,7 +1150,7 @@
     });
   }
 
-  // ===== RENDU : montant, %, reste, dons de 5 €, donateurs, date et briques à partir de la même donnée =====
+  // ===== RENDU : tous les chiffres à partir de la même donnée =====
   function render() {
     const s = stats();
     const setText = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
@@ -1053,7 +1159,7 @@
     setText('js-raised', money(state.raised));
     setText('js-hero-raised', money(state.raised));
     setText('js-dock-raised', money(state.raised));
-    setText('js-percent', lang === 'en' ? s.percent + '%' : s.percent + ' %');
+    setText('js-percent', lang === 'en' ? s.percent + '%' : s.percent + ' %');
     setText('js-remaining-title', money(s.remaining));
     setAll('.js-goal', money(state.goal));
     setAll('[data-slot="count5"]', num(s.count5));
@@ -1078,10 +1184,15 @@
   }
   window.__skhReapply = render;
 
-  // ===== TRADUCTION FR / EN =====
-  function setLanguage(next) {
+  // ===== LANGUE FR / EN =====
+  // Choix mémorisé ; sinon ?lang=en dans l'adresse ; sinon langue du navigateur (anglais si non francophone).
+  const langButtons = document.querySelectorAll('.lang button');
+  function setLanguage(next, remember) {
     lang = next;
     document.documentElement.lang = next;
+    document.title = T[next].title;
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute('content', T[next].desc);
     document.querySelectorAll('[data-fr]').forEach((el) => {
       if (el.hasAttribute('data-i18n-template')) return;
       const v = el.dataset[next];
@@ -1090,14 +1201,25 @@
     document.querySelectorAll('[data-aria-fr]').forEach((el) => {
       el.setAttribute('aria-label', next === 'en' ? el.dataset.ariaEn : el.dataset.ariaFr);
     });
+    document.querySelectorAll('[data-alt-fr]').forEach((el) => {
+      el.setAttribute('alt', next === 'en' ? el.dataset.altEn : el.dataset.altFr);
+    });
     document.getElementById('copy-label').textContent = T[next].copy;
+    langButtons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.lang === next)));
     updateMenuLabel();
     applyTemplates();
     render();
-    document.querySelector('.lang-fr-opt').classList.toggle('is-active', next === 'fr');
-    document.querySelector('.lang-en-opt').classList.toggle('is-active', next === 'en');
+    if (remember) { try { localStorage.setItem('skh-lang', next); } catch (e) { /* stockage indisponible */ } }
   }
-  document.getElementById('lang-toggle').addEventListener('click', () => setLanguage(lang === 'fr' ? 'en' : 'fr'));
+  langButtons.forEach((b) => b.addEventListener('click', () => { if (b.dataset.lang !== lang) setLanguage(b.dataset.lang, true); }));
+
+  function initialLanguage() {
+    const fromUrl = new URLSearchParams(window.location.search).get('lang');
+    if (fromUrl === 'en' || fromUrl === 'fr') return fromUrl;
+    try { const saved = localStorage.getItem('skh-lang'); if (saved === 'en' || saved === 'fr') return saved; } catch (e) { /* ignoré */ }
+    const nav = (navigator.languages && navigator.languages[0]) || navigator.language || 'fr';
+    return /^fr\b/i.test(nav) ? 'fr' : 'en';
+  }
 
   // ===== MENU MOBILE =====
   const menuBtn = document.getElementById('menu-btn');
@@ -1133,37 +1255,47 @@
     copyTimer = setTimeout(() => { copyLabel.textContent = T[lang].copy; }, 2400);
   });
 
-  // ===== BARRE DE DON MOBILE : visible dès que les boutons de l'accueil sont passés sous la barre de navigation =====
-  // Calcul de position au défilement (fiable aussi lors des sauts directs vers une section).
+  // ===== BARRE DE DON MOBILE : visible dès que les boutons de l'accueil sont passés sous la navigation =====
   const dock = document.getElementById('dock');
   const heroCtas = document.querySelector('.hero .ctas');
   let dockTick = false;
   function updateDock() {
     dockTick = false;
-    const show = heroCtas.getBoundingClientRect().bottom < 64;
+    const navH = document.querySelector('.nav').offsetHeight;
+    const show = heroCtas.getBoundingClientRect().bottom < navH;
     if (show === dock.classList.contains('is-shown')) return;
     dock.classList.toggle('is-shown', show);
     if (show) dock.removeAttribute('inert'); else dock.setAttribute('inert', '');
   }
   window.addEventListener('scroll', () => { if (!dockTick) { dockTick = true; requestAnimationFrame(updateDock); } }, { passive: true });
   window.addEventListener('resize', updateDock);
-  updateDock();
+
+  // ===== APPARITION DOUCE DES BLOCS =====
+  const revealEls = document.querySelectorAll('[data-reveal]');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    revealEls.forEach((el) => el.classList.add('is-in'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-in'); io.unobserve(entry.target); }
+      });
+    }, { rootMargin: '0px 0px -40px 0px', threshold: 0.05 });
+    revealEls.forEach((el) => io.observe(el));
+    // Sécurité : aucun contenu ne doit rester masqué (navigateur lent, impression, robots d'indexation).
+    setTimeout(() => revealEls.forEach((el) => el.classList.add('is-in')), 2500);
+  }
 
   // ===== RÉVÉLATION DU GRAND MUR =====
   function revealBig() {
     if (bigRevealed) return;
     const s = stats();
-    const finish = () => {
-      bigRevealed = true;
-      placeTag();
-      if (!reduceMotion) wallTag.classList.add('pop');
-    };
+    const finish = () => { bigRevealed = true; placeTag(); };
     if (reduceMotion) { fillWall(wallBig, s.exact); finish(); return; }
     layBricks(wallBig, s.exact, finish);
   }
   new IntersectionObserver((entries, obs) => {
     if (entries[0].isIntersecting) { obs.disconnect(); revealBig(); }
-  }, { threshold: 0.35 }).observe(wallBig);
+  }, { threshold: 0.3 }).observe(wallBig);
   window.addEventListener('resize', placeTag);
 
   // ===== DONNÉES : /api/stats, rafraîchies toutes les 5 minutes =====
@@ -1185,8 +1317,9 @@
       .catch(() => { /* hors ligne ou API absente : dernier relevé intégré conservé */ });
   }
 
-  applyTemplates();
-  render();
+  const startLang = initialLanguage();
+  if (startLang === 'fr') { applyTemplates(); render(); } else { setLanguage('en', false); }
+  updateDock();
   syncStats();
   setInterval(() => { if (!document.hidden) syncStats(); }, 5 * 60 * 1000);
 })();
