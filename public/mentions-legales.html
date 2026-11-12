@@ -1,12 +1,19 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" translate="no">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mentions légales et confidentialité · Suleyman & Kabir Humanity</title>
 <meta name="description" content="Mentions légales et politique de confidentialité du site de l'association Suleyman & Kabir Humanity.">
-<meta name="theme-color" content="#0F3B2E">
+<link rel="canonical" href="https://skhumanity.com/mentions-legales.html">
+<link rel="alternate" hreflang="fr" href="https://skhumanity.com/mentions-legales.html">
+<link rel="alternate" hreflang="en" href="https://skhumanity.com/mentions-legales.html?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://skhumanity.com/mentions-legales.html">
+<meta name="google" content="notranslate">
+<meta name="theme-color" content="#11392E">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">
 <style>
   @font-face{font-family:'Literata'; font-weight:400 700; font-display:swap; src:url(/fonts/literata-latin.woff2) format('woff2');}
   @font-face{font-family:'Public Sans'; font-weight:400 700; font-display:swap; src:url(/fonts/public-sans-latin.woff2) format('woff2');}
@@ -36,6 +43,13 @@
   nav.toc{margin:0 0 8px; font-size:.95rem;}
   nav.toc a{margin-right:16px; display:inline-flex; min-height:44px; align-items:center;}
   @media (max-width:520px){ dl, .treat dl{grid-template-columns:1fr; gap:2px;} dd{margin-bottom:12px;} }
+  .bar-right{display:flex; align-items:center; gap:12px;}
+  .lang{display:inline-flex; padding:4px; gap:2px; border-radius:10px; background:#EBEDE5;}
+  .lang button{min-width:40px; min-height:36px; padding:0 8px; border:0; border-radius:8px; cursor:pointer; background:transparent; color:var(--encre-doux); font:600 .8125rem/1 'Public Sans', system-ui, sans-serif;}
+  .lang button[aria-pressed="true"]{background:#fff; color:var(--encre); box-shadow:0 1px 2px rgba(0,0,0,.06);}
+  .lang button:focus-visible{outline:3px solid var(--or); outline-offset:2px;}
+  .note-lang{margin:0 0 28px; padding:12px 16px; border-radius:10px; background:#fff; border:1px solid var(--brume); font-size:.92rem; color:var(--encre-doux);}
+  main[hidden]{display:none;}
 </style>
 </head>
 <body>
@@ -48,10 +62,17 @@
 <header>
   <div class="bar">
     <a class="brand" href="/">Suleyman &amp; Kabir Humanity</a>
-    <a href="/">Retour au site</a>
+    <div class="bar-right">
+      <a href="/" data-i18n="legal.retour">Retour au site</a>
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang="fr" lang="fr" aria-pressed="true" aria-label="Français">FR</button>
+        <button type="button" data-lang="en" lang="en" aria-pressed="false" aria-label="English">EN</button>
+      </div>
+    </div>
   </div>
 </header>
-<main>
+<!-- Version française (texte de référence) -->
+<main lang="fr" data-lang-block="fr">
   <h1>Mentions légales et confidentialité</h1>
   <p class="updated">Dernière mise à jour : 12 novembre 2026</p>
   <nav class="toc" aria-label="Sommaire"><a href="#mentions">Mentions légales</a><a href="#confidentialite">Politique de confidentialité</a></nav>
@@ -144,5 +165,117 @@
   <h3>Dons</h3>
   <p>Les données saisies lors d'un don (identité, coordonnées, paiement) sont collectées et traitées par CotizUp, sous sa propre responsabilité. Consultez la politique de confidentialité de CotizUp pour en savoir plus.</p>
 </main>
+
+<!-- English version (translation of the French reference text) -->
+<main lang="en" data-lang-block="en" hidden>
+  <h1>Legal notice and privacy</h1>
+  <p class="updated">Last updated: 12 November 2026</p>
+  <p class="note-lang">This English version is provided for information. The French version is the reference text.</p>
+  <nav class="toc" aria-label="Contents"><a href="#legal-notice">Legal notice</a><a href="#privacy">Privacy policy</a></nav>
+
+  <h2 id="legal-notice">Legal notice</h2>
+
+  <h3>Website publisher</h3>
+  <dl>
+    <dt>Name</dt><dd>Suleyman &amp; Kabir Humanity</dd>
+    <dt>Status</dt><dd>French non-profit association (1901 Act)</dd>
+    <dt>SIREN</dt><dd>106 087 125</dd>
+    <dt>RNA</dt><dd>W781010839</dd>
+    <dt>Registration</dt><dd>Sub-prefecture of Mantes-la-Jolie, registration receipt dated 3 June 2026</dd>
+    <dt>Publication</dt><dd>Official Journal of Associations (JOAFE), notice no. 2091 of 9 June 2026</dd>
+    <dt>Registered office</dt><dd><span class="todo">To be completed: registered office address</span></dd>
+    <dt>Telephone</dt><dd><span class="todo">To be completed: association telephone number</span></dd>
+    <dt>Email</dt><dd><a href="mailto:suleyman.kabir.humanity@gmail.com">suleyman.kabir.humanity@gmail.com</a></dd>
+    <dt>Publication director</dt><dd>A. El Ouarz, President</dd>
+  </dl>
+
+  <h3>Hosting provider</h3>
+  <dl>
+    <dt>Company</dt><dd>Vercel Inc.</dd>
+    <dt>Address</dt><dd>440 N Barranca Ave #4133, Covina, CA 91723, United States</dd>
+    <dt>Telephone</dt><dd><span class="todo">To be completed: Vercel Inc. telephone number</span></dd>
+    <dt>Website</dt><dd><a href="https://vercel.com" target="_blank" rel="noopener">vercel.com</a></dd>
+  </dl>
+
+  <h3>Donations</h3>
+  <p>Donations are made on the association's official fundraising page, hosted by the CotizUp platform (<a href="https://www.cotizup.com/@suleyman-et-kabir-humanity/sadaka-jarya-orphelins-mosquee" target="_blank" rel="noopener">see the fundraising page</a>). Payments are processed by CotizUp and its payment provider: the association never has access to your bank details. CotizUp's terms and conditions and privacy policy apply to your donation.</p>
+  <p>The amount raised and the number of donors shown on this website are taken by the association from the public fundraising page and entered manually. The date and time of the latest reading are shown below the amount. In the event of any discrepancy, the CotizUp page prevails.</p>
+
+  <h3>Intellectual property</h3>
+  <p>The texts and visuals on this website belong to the association or its partners and may not be reused without permission. The Newsreader, Instrument Sans, Amiri, Literata and Public Sans typefaces are distributed under the SIL Open Font License.</p>
+
+  <h2 id="privacy">Privacy policy</h2>
+
+  <h3>Data controller</h3>
+  <p>The Suleyman &amp; Kabir Humanity association is the controller of the processing described below. Contact: <a href="mailto:suleyman.kabir.humanity@gmail.com">suleyman.kabir.humanity@gmail.com</a>.</p>
+
+  <h3>What this website does not do</h3>
+  <ul>
+    <li>It sets <strong>no cookies</strong> and uses <strong>no analytics, advertising or social media tools</strong>.</li>
+    <li>It contains <strong>no public forms</strong> and collects no donor data: only totals (amount raised, number of donors) are published.</li>
+    <li>Fonts are hosted on the website itself: no data is sent to a third-party font service.</li>
+  </ul>
+
+  <h3>Data processed</h3>
+  <div class="treat">
+    <h3>Hosting provider's technical logs</h3>
+    <dl>
+      <dt>Data</dt><dd>IP address, browser type, page requested, date and time</dd>
+      <dt>Purpose</dt><dd>Keeping the website running and secure</dd>
+      <dt>Legal basis</dt><dd>The association's legitimate interest (Article 6(1)(f) GDPR)</dd>
+      <dt>Retention</dt><dd>In line with the hosting provider Vercel's retention policy</dd>
+    </dl>
+  </div>
+  <div class="treat">
+    <h3>Protection of the administration area</h3>
+    <dl>
+      <dt>Data</dt><dd>Hashed and truncated IP address fingerprint (SHA-256), recorded only when an incorrect access code is entered</dd>
+      <dt>Purpose</dt><dd>Blocking unauthorised attempts to update the fundraising figures</dd>
+      <dt>Legal basis</dt><dd>The association's legitimate interest (Article 6(1)(f) GDPR)</dd>
+      <dt>Retention</dt><dd>15 minutes, then deleted automatically</dd>
+    </dl>
+  </div>
+  <div class="treat">
+    <h3>Email correspondence</h3>
+    <dl>
+      <dt>Data</dt><dd>Email address, name if provided, and message content</dd>
+      <dt>Purpose</dt><dd>Answering your questions</dd>
+      <dt>Legal basis</dt><dd>The association's legitimate interest (Article 6(1)(f) GDPR)</dd>
+      <dt>Retention</dt><dd><span class="todo">To be completed: email retention period</span></dd>
+    </dl>
+  </div>
+
+  <h3>Recipients and service providers</h3>
+  <p>The data is accessible only to authorised members of the association and to the following technical service providers, as required for their services:</p>
+  <ul>
+    <li><strong>Vercel Inc.</strong> (United States): website hosting and technical logs.</li>
+    <li><strong>Upstash</strong>: database holding the fundraising totals and, for 15 minutes, the fingerprint described above. Hosting region: <span class="todo">To be completed</span>.</li>
+    <li><strong>Google</strong> (Gmail service): receipt of emails sent to the contact address.</li>
+  </ul>
+  <p>Some of these providers are based outside the European Union. The related data transfers are covered by the safeguards required by the GDPR and offered by these providers in their contractual terms.</p>
+
+  <h3>Your rights</h3>
+  <p>You have the right to access, rectify and erase your data, to restrict or object to its processing, and to data portability where applicable. To exercise these rights, write to <a href="mailto:suleyman.kabir.humanity@gmail.com">suleyman.kabir.humanity@gmail.com</a>. You will receive a reply within one month.</p>
+  <p>If you believe your rights have not been respected, you may lodge a complaint with the CNIL, the French data protection authority (<a href="https://www.cnil.fr" target="_blank" rel="noopener">cnil.fr</a>).</p>
+
+  <h3>Donations</h3>
+  <p>The data entered when making a donation (identity, contact details, payment) is collected and processed by CotizUp, under its own responsibility. Please see CotizUp's privacy policy for more information.</p>
+</main>
+
+<script src="/js/i18n.js"></script>
+<script>
+(function () {
+  'use strict';
+  // Même langue que sur la page d'accueil (choix mémorisé), changement immédiat sans rechargement.
+  const I18N = window.SKH_I18N;
+  function setLanguage(lang, remember) {
+    I18N.apply(lang, { title: 'legal.meta.title', desc: 'legal.meta.desc' });
+    document.querySelectorAll('[data-lang-block]').forEach((b) => { b.hidden = b.dataset.langBlock !== lang; });
+    if (remember) I18N.saveLang(lang);
+  }
+  document.querySelectorAll('.lang button[data-lang]').forEach((b) => b.addEventListener('click', () => setLanguage(b.dataset.lang, true)));
+  setLanguage(I18N.initialLang(), false);
+})();
+</script>
 </body>
 </html>
